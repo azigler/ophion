@@ -1,0 +1,36 @@
+// Import Bulma utilities
+@import "~bulma/sass/utilities/_all";
+
+// Set theme colors
+$primary: #152B42;
+$secondary: #7A8F9C;
+$accent: #FF7477;
+
+// Invert for all theme colors
+$primary-invert: findColorInvert($primary);
+
+// Add colors to Bulma map
+$addColors: (
+  "primary":($primary, $primary-invert),
+  "accent":($accent, $primary-invert),
+  "secondary": ($secondary, $primary-invert),
+);
+$colors: map-merge($colors, $addColors);
+
+// Navbar colors
+$navbar-item-color: $primary-invert;
+
+// Footer colors
+$footer-color: $primary-invert;
+$footer-background-color: $primary;
+
+// Link colors
+$link: $accent;
+$link-hover: $primary-invert;
+
+// Text colors
+$text: $primary;
+
+// Import Bulma and Buefy
+@import "~bulma";
+@import "~buefy/src/scss/buefy";

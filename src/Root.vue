@@ -1,5 +1,5 @@
 <template>
-  <div id="root">
+  <div id="root" class="hero is-bold is-light">
     <top-nav/>
       <div id="router">
         <router-view/>
@@ -31,21 +31,13 @@ body {
   overflow: auto;
 }
 
-// Sticky bottom footer
+// Base styles
 #root {
-  display: flex;
   min-height: 100vh;
-  flex-direction: column;
-}
-#router {
-  flex: 1;
-  margin-top: 50px;
-}
-
-// Root container
-#root {
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
-  color: #181818;
+}
+#router {
+  padding: 4em 0;
 }
 </style>
