@@ -5,7 +5,6 @@ import Router from 'vue-router'
 import Game from '@/components/Game'
 import About from '@/components/About'
 import Guide from '@/components/Guide'
-import Contact from '@/components/Contact'
 import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
@@ -27,11 +26,6 @@ export default new Router({
       path: '/guide',
       name: 'Guide',
       component: Guide
-    },
-    {
-      path: '/contact',
-      name: 'Contact',
-      component: Contact
     },
     {
       path: '/helloworld',

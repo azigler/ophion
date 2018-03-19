@@ -1,5 +1,5 @@
 <template>
-  <div id="root" class="hero is-bold is-light">
+  <div id="root">
     <top-nav/>
       <div id="router">
         <router-view/>
@@ -32,12 +32,11 @@ body {
 }
 
 // Base styles
+body {
+  background-image: linear-gradient(141deg, #dfd8d9 0%, whitesmoke 71%, white 100%);
+}
 #root {
-  min-height: 100vh;
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
-}
-#router {
-  padding: 4em 0;
 }
 </style>

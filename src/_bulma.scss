@@ -17,8 +17,11 @@ $addColors: (
 );
 $colors: map-merge($colors, $addColors);
 
-// Navbar colors
+// Navbar
 $navbar-item-color: $primary-invert;
+$navbar-height: 2rem;
+$navbar-background-color: $primary;
+$navbar-item-hover-color: $accent;
 
 // Footer colors
 $footer-color: $primary-invert;
