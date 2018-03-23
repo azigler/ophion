@@ -1,25 +1,45 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
-      <router-link class="navbar-item" to="/">
+      <router-link
+        class="navbar-item"
+        to="/"
+      >
         <b-icon
           pack="fab"
           icon="quinscape"
           size="is-small"
           type="is-light"
-          class="navbar-item">
-        </b-icon>
+          class="navbar-item"
+        />
         <h1>Ophion</h1>
       </router-link>
-      <div class="navbar-burger burger" @click="toggleMenu" :class="{'is-active': navIsActive}" data-target="mainNav">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div
+        class="navbar-burger burger"
+        @click="toggleMenu"
+        :class="{'is-active': navIsActive}"
+        data-target="mainNav"
+      >
+        <span />
+        <span />
+        <span />
       </div>
     </div>
-    <div id="mainNav" class="navbar-menu is-bold is-primary" :class="{'is-active': navIsActive}">
+    <div
+      id="mainNav"
+      class="navbar-menu is-bold is-primary"
+      :class="{'is-active': navIsActive}"
+    >
       <div class="navbar-end">
-        <nav-menu-item v-for="(item, index) in menu" :key="index" v-bind="menu[index]"></nav-menu-item>
+        <nav-menu-item
+          v-for="(item, index) in menu"
+          :key="index"
+          v-bind="menu[index]"
+        />
         <a class="navbar-item">
           <div class="menu-item">
             <b-icon
@@ -27,7 +47,7 @@
               icon="discord"
               size="is-small"
               type="is-light"
-            ></b-icon>
+            />
             Discord
           </div>
         </a>

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <the-nav/>
-      <div id="router">
-        <router-view/>
-      </div>
+    <div id="router">
+      <router-view/>
+    </div>
     <the-footer/>
   </div>
 </template>
@@ -13,7 +13,7 @@ import TheNav from '@/components/TheNav'
 import TheFooter from '@/components/TheFooter'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {'the-nav': TheNav, 'the-footer': TheFooter}
 }
 </script>
