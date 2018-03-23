@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Root from './Root'
+import App from './App'
 import router from './router'
 import Buefy from 'buefy'
 
@@ -7,8 +7,8 @@ Vue.use(Buefy)
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#root',
+  el: '#app',
   router,
-  components: { Root },
-  template: '<Root/>'
+  components: { App },
+  template: '<App/>'
 })

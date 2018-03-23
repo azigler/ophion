@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 // Components
-import Game from '@/components/Game'
-import About from '@/components/About'
-import Guide from '@/components/Guide'
+import PageGame from '@/components/PageGame'
+import PageAbout from '@/components/PageAbout'
+import PageGuide from '@/components/PageGuide'
 import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
@@ -15,17 +15,17 @@ export default new Router({
     {
       path: '/',
       name: 'Game',
-      component: Game
+      component: PageGame
     },
     {
       path: '/about',
       name: 'About',
-      component: About
+      component: PageAbout
     },
     {
       path: '/guide',
       name: 'Guide',
-      component: Guide
+      component: PageGuide
     },
     {
       path: '/helloworld',

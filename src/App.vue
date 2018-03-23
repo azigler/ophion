@@ -1,20 +1,20 @@
 <template>
-  <div id="root">
-    <top-nav/>
+  <div id="app">
+    <the-nav/>
       <div id="router">
         <router-view/>
       </div>
-    <bot-footer/>
+    <the-footer/>
   </div>
 </template>
 
 <script>
-import Nav from '@/components/topNav'
-import Footer from '@/components/botFooter'
+import TheNav from '@/components/TheNav'
+import TheFooter from '@/components/TheFooter'
 
 export default {
-  name: 'Root',
-  components: {'top-nav': Nav, 'bot-footer': Footer}
+  name: 'app',
+  components: {'the-nav': TheNav, 'the-footer': TheFooter}
 }
 </script>
 
@@ -35,7 +35,7 @@ body {
 body {
   background-image: linear-gradient(141deg, #dfd8d9 0%, whitesmoke 71%, white 100%);
 }
-#root {
+#app {
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
 }

@@ -58,7 +58,7 @@ const guideMenuItem = {
 }
 
 export default {
-  name: 'topMenu',
+  name: 'TheNav',
   data () {
     return {
       navIsActive: false,
