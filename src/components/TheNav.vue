@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import navMenuItem from '@/components/navMenuItem'
+import NavMenuItem from '@/components/NavMenuItem'
 
 const aboutMenuItem = {
   url: '/about',
@@ -73,14 +73,14 @@ export default {
       this.navIsActive = !this.navIsActive
     }
   },
-  components: {'nav-menu-item': navMenuItem}
+  components: {'nav-menu-item': NavMenuItem}
 }
 </script>
 
 <style lang="scss" scoped>
 .navbar-burger {
-color: $white;
-margin-top: 0.3rem;
+  color: $white;
+  margin-top: 0.3rem;
 }
 
 .menu-item {

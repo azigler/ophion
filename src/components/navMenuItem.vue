@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: 'navMenuItem',
+  name: 'NavMenuItem',
   props: ['url', 'pack', 'icon', 'size', 'type', 'text'],
   methods: {
     closeMenu: function () {
