@@ -9,11 +9,10 @@ module.exports = {
     const devServer = browser.globals.devServerURL
 
     browser
-      .url(devServer + '/helloworld')
+      .url(devServer + '/about')
       .waitForElementVisible('#app', 5000)
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js App')
-      .assert.elementCount('img', 1)
+      .assert.elementPresent('.about')
+      .assert.containsText('.about', 'About - Coming Soon!')
       .end()
   }
 }

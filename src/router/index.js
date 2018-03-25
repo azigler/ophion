@@ -5,7 +5,6 @@ import Router from 'vue-router'
 import PageGame from '@/components/PageGame'
 import PageAbout from '@/components/PageAbout'
 import PageGuide from '@/components/PageGuide'
-import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
@@ -26,11 +25,6 @@ export default new Router({
       path: '/guide',
       name: 'Guide',
       component: PageGuide
-    },
-    {
-      path: '/helloworld',
-      name: 'HelloWorld',
-      component: HelloWorld
     }
   ]
 })
