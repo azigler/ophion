@@ -1,0 +1,41 @@
+<template>
+  <footer class="footer">
+    <div class="container">
+      <div class="content">
+        <span class="is-pulled-left">{{ regionName }}</span>
+        <span class="credits">{{ credits }} credits</span>
+        <span class="is-pulled-right">{{ stationYear }} YD</span>
+        <progress
+          class="progress is-accent"
+          :value="progress"
+          max="100"
+        >
+          {{ progress }}%
+        </progress>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script>
+export default {
+  name: 'TheFooter'
+}
+</script>
+
+<style lang="scss" scoped>
+.footer {
+  border-top: 1px solid white;
+  padding: 0.5rem 1rem 1rem;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  bottom: 0;
+  position: fixed;
+
+  .content {
+    color: white;
+    font-size: 14px;
+  }
+}
+</style>
