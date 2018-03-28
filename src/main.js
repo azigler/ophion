@@ -2,15 +2,15 @@ import Vue from 'vue'
 import App from '@/App'
 import router from '@/router'
 import Buefy from 'buefy'
-import Ophion from '@/lib'
+import { store } from '@/store.js'
 
 Vue.use(Buefy)
-Vue.use(Ophion)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

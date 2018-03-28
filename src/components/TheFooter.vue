@@ -18,8 +18,13 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'TheFooter'
+  name: 'TheFooter',
+  computed: mapState([
+    'regionName', 'credits', 'stationYear', 'progress'
+  ])
 }
 </script>
 
