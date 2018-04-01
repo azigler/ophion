@@ -35,10 +35,6 @@ const state = initialState()
 export const store = new Vuex.Store({
   state,
   mutations: {
-    reset (state) {
-      console.log('Resetting state...')
-      state.replaceState(initialState)
-    },
     increment (state, payload) {
       if (payload.stash) {
         const stash = state[payload.stash]
