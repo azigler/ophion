@@ -2,7 +2,7 @@
   <section class="is-parent tile is-6">
     <div class="panel log tile is-child box">
       <h3>
-        Logs
+        Log
       </h3>
       <p
         v-for="(entry, key) in this.$store.state.log"

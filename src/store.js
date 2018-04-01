@@ -74,6 +74,7 @@ export const store = new Vuex.Store({
     },
     nameRegion (state, payload) {
       state.regionName = payload.name
+      console.log(`region named: ${state.regionName}`)
     }
   },
   plugins: [createPersistedState({key: 'ophion'})]

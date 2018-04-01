@@ -4,7 +4,10 @@
     role="navigation"
     aria-label="main navigation"
   >
-    <div class="navbar-brand">
+    <div
+      class="navbar-brand"
+      :class="{'is-active': navIsActive}"
+    >
       <router-link
         class="navbar-item"
         to="/"
@@ -102,9 +105,20 @@ h1 {
   font-weight: bold;
 }
 
-.navbar-burger {
-  color: $white;
-  margin-top: 0.3rem;
+.navbar-brand {
+  border-bottom: 1px dotted white;
+  &.is-active {
+    border-bottom: initial;
+  }
+
+  .navbar-burger {
+    color: $white;
+    margin-top: 0.3rem;
+  }
+}
+
+#mainNav.is-active {
+  border-bottom: 1px white dotted;
 }
 
 .menu-item {
