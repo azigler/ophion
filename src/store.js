@@ -7,7 +7,6 @@ Vue.use(Vuex)
 export function initialState () {
   return {
     age: 0,
-    initiated: false,
     heartbeat: 10000,
     resources: {
       energy: 0,
