@@ -23,6 +23,7 @@ export function initialState () {
       processor: 0,
       bandwidth: 0
     },
+    availableActions: ['scan', 'log', 'reap', 'clearStorage'],
     log: ['Your sensors flicker to life...'],
     regionName: undefined,
     credits: 400,
@@ -55,6 +56,13 @@ export const store = new Vuex.Store({
     },
     toggle (state, payload) {
       state[payload.property] = !state[payload.property]
+    },
+    toggleAction (state, payload) {
+      if (state.availableActions.includes(payload.action)) {
+        state.availableActions = state.availableActions.filter(e => e !== payload.action)
+      } else {
+        state.availableActions.push(payload.action)
+      }
     },
     addLog (state, payload) {
       // keep only 10 log entries at a time

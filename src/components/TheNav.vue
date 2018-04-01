@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import NavMenuItem from '@/components/NavMenuItem'
+import TheNavMenuItem from '@/components/TheNavMenuItem'
 
 const aboutMenuItem = {
   url: '/about',
@@ -93,7 +93,7 @@ export default {
       this.navIsActive = !this.navIsActive
     }
   },
-  components: {'nav-menu-item': NavMenuItem}
+  components: {'nav-menu-item': TheNavMenuItem}
 }
 </script>
 
