@@ -3,29 +3,34 @@
 
 // Set theme colors
 $primary: #152B42;
-$secondary: #7A8F9C;
-$accent: #FF7477;
+$secondary: #FFAE0D;
+$accent: #FB6000;
+$tertiary: #0CEBEB;
 
 // Invert for all theme colors
 $primary-invert: findColorInvert($primary);
+$secondary-invert: findColorInvert($secondary);
+$accent-invert: findColorInvert($accent);
+$tertiary-invert: findColorInvert($tertiary);
 
 // Add colors to Bulma map
 $addColors: (
   "primary":($primary, $primary-invert),
-  "accent":($accent, $primary-invert),
-  "secondary": ($secondary, $primary-invert),
+  "accent":($accent, $accent-invert),
+  "secondary": ($secondary, $secondary-invert),
+  "tertiary": ($tertiary, $tertiary-invert)
 );
 $colors: map-merge($colors, $addColors);
 
 // Navbar
 $navbar-item-color: $primary-invert;
 $navbar-height: 2rem;
-$navbar-background-color: $primary;
-$navbar-item-hover-color: $accent;
+$navbar-background-color: $accent;
+$navbar-item-hover-color: $secondary;
 
 // Footer colors
 $footer-color: $primary-invert;
-$footer-background-color: $primary;
+$footer-background-color: $accent;
 
 // Link colors
 $link: $accent;
@@ -33,6 +38,9 @@ $link-hover: $primary-invert;
 
 // Text colors
 $text: $primary;
+
+// Progress bar
+$progress-bar-background-color: #FFB86D;
 
 // Import Bulma and Buefy
 @import "~bulma";

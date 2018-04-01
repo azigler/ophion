@@ -3,10 +3,9 @@
     <div class="container">
       <div class="content">
         <span class="is-pulled-left">{{ regionName }}</span>
-        <span class="credits">{{ credits }} credits</span>
-        <span class="is-pulled-right">{{ stationYear }} YD</span>
+        <span class="is-pulled-right">{{ credits }} credits</span>
         <progress
-          class="progress is-accent"
+          class="progress is-tertiary"
           :value="progress"
           max="100"
         >
@@ -23,14 +22,15 @@ import { mapState } from 'vuex'
 export default {
   name: 'TheFooter',
   computed: mapState([
-    'regionName', 'credits', 'stationYear', 'progress'
+    'regionName', 'credits', 'progress'
   ])
 }
 </script>
 
 <style lang="scss" scoped>
 .footer {
-  border-top: 1px solid white;
+  font-weight: bold;
+  border-top: 1px dotted white;
   padding: 0.5rem 1rem 1rem;
   left: 0;
   right: 0;

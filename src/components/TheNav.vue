@@ -98,6 +98,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+h1 {
+  font-weight: bold;
+}
+
 .navbar-burger {
   color: $white;
   margin-top: 0.3rem;

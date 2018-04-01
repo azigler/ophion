@@ -31,7 +31,21 @@ body {
   // Prevent overscroll
   height: 100%;
   overflow: auto;
-  background-image: linear-gradient(141deg, #dfd8d9 0%, whitesmoke 71%, white 100%);
+  background: #0cebeb;
+  background: linear-gradient(to bottom, #29ffc6, #20e3b2, #0cebeb);
+
+  .box {
+    background-color: rgba(173, 193, 188, 0.6);
+  }
+
+  .panel {
+    h3 {
+      font-size: 13px;
+      text-decoration: underline;
+      text-align: left;
+      margin-bottom: 0.2rem;
+    }
+  }
 }
 
 #app {
