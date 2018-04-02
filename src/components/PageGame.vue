@@ -34,6 +34,18 @@ export default {
     'panel-log': PanelLog,
     'panel-flora': PanelFlora,
     'panel-fauna': PanelFauna
+  },
+  methods: {
+    heartbeat: function () {
+      for (let rate in this.$store.state.rates) {
+        if (this.$store.state.rates[rate] > 0) {
+          this.$store.commit('increment', { property: rate, value: this.$store.state.rates[rate], stash: 'resources' })
+        }
+      }
+    }
+  },
+  created () {
+    setInterval(this.heartbeat, this.$store.state.heartbeat)
   }
 }
 </script>
@@ -55,6 +67,13 @@ main {
     &.top {
       padding-bottom: 0;
     }
+  }
+}
+
+// fix panel gap on tablet
+@include mobile {
+  .row {
+    min-height: initial;
   }
 }
 </style>

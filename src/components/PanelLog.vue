@@ -9,7 +9,7 @@
         :key="key"
         class="log-entry"
       >
-        <span>{{ entry }}</span>
+        {{ entry }}
       </p>
     </div>
   </section>
@@ -27,11 +27,17 @@ export default {
 </script>
 
 <style lang="scss">
-.panel {
+.panel.log {
+  display: grid;
+
   .log-entry {
     text-align: left;
     font-size: 14px;
     font-style: italic;
+    margin: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 }
 </style>

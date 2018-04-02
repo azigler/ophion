@@ -52,4 +52,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
 }
+
+#router {
+  height: 89vh;
+}
 </style>

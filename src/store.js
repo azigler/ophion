@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export function initialState () {
   return {
-    age: 0,
+    tick: 0,
     heartbeat: 10000,
     resources: {
       energy: 0,
