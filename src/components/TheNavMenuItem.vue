@@ -38,11 +38,11 @@ export default {
     },
     type: {
       type: String,
-      default: 'is-light'
+      default: ''
     },
     text: {
       type: String,
-      default: 'Placeholder'
+      default: 'Menu Item'
     }
   },
   methods: {
@@ -52,23 +52,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.menu-item {
-  justify-content: center;
-  display: flex;
-
-  .icon {
-    padding-top: 0.375rem;
-    margin-right: 0.5625rem;
-  }
-}
-
-.navbar-item {
-  &:hover {
-    span {
-      color: $accent!important;
-    }
-  }
-}
-</style>

@@ -51,7 +51,7 @@ export default {
 
     td {
       &.key {
-        padding-right: 2vw;
+        padding-right: 1.5rem;
       }
       &.rate {
         margin-left: -4rem;
@@ -61,7 +61,7 @@ export default {
         font-style: italic;
       }
       &.value {
-        padding-left: 2vw;
+        padding-left: 1.5rem;
       }
     }
   }

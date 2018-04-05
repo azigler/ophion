@@ -16,7 +16,6 @@
           pack="fab"
           icon="quinscape"
           size="is-small"
-          type="is-light"
           class="navbar-item"
         />
         <h1>Ophion</h1>
@@ -49,7 +48,6 @@
               pack="fab"
               icon="discord"
               size="is-small"
-              type="is-light"
             />
             Discord
           </div>
@@ -66,8 +64,6 @@ const aboutMenuItem = {
   url: '/about',
   pack: 'fa',
   icon: 'indent',
-  size: 'is-small',
-  type: 'is-light',
   text: 'About'
 }
 
@@ -75,8 +71,6 @@ const guideMenuItem = {
   url: '/guide',
   pack: 'fa',
   icon: 'book',
-  size: 'is-small',
-  type: 'is-light',
   text: 'Guide'
 }
 
@@ -100,15 +94,16 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-h1 {
-  font-weight: bold;
-}
-
+<style lang="scss">
 .navbar-brand {
   border-bottom: 1px dotted white;
+
   &.is-active {
     border-bottom: initial;
+  }
+
+  h1 {
+    font-weight: bold;
   }
 
   .navbar-burger {
@@ -133,8 +128,10 @@ h1 {
 
 .navbar-item {
   &:hover {
+    color: $primary;
+
     span {
-      color: $accent!important;
+      color: $primary;
     }
   }
 }

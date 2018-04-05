@@ -40,7 +40,6 @@ body {
 
   .panel {
     h3 {
-      font-size: 13px;
       text-decoration: underline;
       text-align: left;
       margin-bottom: 0.2rem;

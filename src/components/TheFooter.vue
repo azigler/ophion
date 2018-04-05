@@ -5,7 +5,7 @@
         <span class="is-pulled-left">{{ regionName }}</span>
         <span class="is-pulled-right">{{ credits }} credits</span>
         <progress
-          class="progress is-tertiary"
+          class="progress"
           :value="progress"
           max="100"
         >

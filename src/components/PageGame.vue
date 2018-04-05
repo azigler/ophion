@@ -61,7 +61,7 @@ main {
 }
 
 .row {
-  min-height: 44vh;
+  min-height: 22rem;
 
   &.is-parent {
     &.top {
