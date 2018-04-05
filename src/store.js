@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
+import tracery from 'tracery-grammar'
+import grammar from '@/assets/grammar'
+
+const corpus = tracery.createGrammar(grammar)
+corpus.addModifiers(tracery.baseEngModifiers)
 
 Vue.use(Vuex)
 
@@ -8,6 +13,7 @@ export function initialState () {
   return {
     tick: 0,
     heartbeat: 10000,
+    logLength: 100,
     resources: {
       energy: 0,
       minerals: 0,
@@ -23,7 +29,7 @@ export function initialState () {
       bandwidth: 0
     },
     availableActions: ['scan', 'log', 'reap', 'clearStorage'],
-    log: ['Your sensors flicker to life...'],
+    log: [{ text: corpus.flatten('#initialLog#') }],
     regionName: undefined,
     credits: 400,
     progress: 0
@@ -64,12 +70,12 @@ export const store = new Vuex.Store({
       }
     },
     addLog (state, payload) {
-      // keep only 10 log entries at a time
-      if (state.log.length < 10) {
-        state.log.unshift(payload.entry)
+      // keep only a certain amount of log entries at any given time
+      if (state.log.length < state.logLength) {
+        state.log.unshift(payload)
       } else {
         state.log.pop()
-        state.log.unshift(payload.entry)
+        state.log.unshift(payload)
       }
     },
     nameRegion (state, payload) {

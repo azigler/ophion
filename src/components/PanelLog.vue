@@ -54,7 +54,7 @@ export default {
     white-space: nowrap;
     overflow: hidden;
 
-    @include touch {
+    @include mobile {
       padding: 0.5rem 0;
     }
 

@@ -1,0 +1,85 @@
+{
+	"initialLog": ["Your sensors flicker to life...",
+		"You awaken to the churning heat of your battery...",
+		"Your clockwork innards interrupt your stasis...",
+		"All at once, your sensors regain functionality...",
+		"Your gauges hiss with sentience..."]
+,	"testLog": ["[#setPronouns#]#mora.capitalize##mora# is a #bodyType# #genderNoun# hailing from the #regionAdj# #regionNoun.s# of #regionName#. #nounThey.capitalize# sports #color# #hairstyle# hair and eyes that glint with #color#."]
+,	"setPronouns": ["[nounThey:she][nounThem:her][nounTheir:her][nounTheirs:hers]","[nounThey:he][nounThem:him][nounTheir:his][nounTheirs:his]"]
+
+,	"mora": ["hla","hle","hli","hlo","hlu",
+		"qa","qe","qi","qo","qu",
+		"xan","xen","xin","xon","xun",
+		"bha","bhe","vii","bho","vuu",
+		"pna","pne","kni","knu","pno",
+		"ya","ye","yi","yo","yu",
+		"al","el","il","ol","ul",
+		"ad","ed","id","od","ud",
+		"ssa","sse","ssi","sso","ssu"]
+
+,	"regionName": ["#mora.capitalize##mora#",
+		"#mora.capitalize##mora##mora#",
+		"#mora.capitalize##mora##mora##mora#",
+		"#mora#'#mora.capitalize#",
+		"#mora#'#mora.capitalize##mora#",
+		"#mora#'#mora.capitalize##mora##mora#",
+		"#mora.capitalize#-#mora#",
+		"#mora.capitalize#-#mora##mora#",
+		"#mora.capitalize#-#mora##mora##mora#",
+		"#mora.capitalize##mora#-#mora#",
+		"#mora.capitalize##mora#-#mora##mora#",
+		"#mora.capitalize##mora##mora#-#mora#"]
+
+, "color": ["#red#","#blue#","#green#","#yellow#","#brown#","#black#","#white#"]
+, "red": ["red","ginger","ruby","cherry","scarlet",
+		"crimson","garnet","merlot","mahogany","sanguine",
+		"sangria","vermilion"]
+,	"blue": ["blue","cerulean","cobalt","cyan","navy",
+		"periwinkle","teal","turquoise"]
+,	"green": ["green","chartreuse","clover","lime","jade",
+		"mint","malachite","celadon","juniper","sage",
+		"shamrock","pistachio","basil"]
+,	"yellow": ["yellow","golden","honey","blond","mustard",
+		"lemon","amber","sunglow","sandy","beige"]
+,	"brown": ["brown","chestnut","bronze","bistre","burgundy",
+		"chocolate","coffee","copper","russet","tawny",
+		"taupe","sienna","sepia","caramel","rust","auburn"]
+,	"black": ["black","jet","gray","sooty","charcoal",
+		"licorice","steel","silver","coal"]
+,	"white": ["white","ash","cream","snowy","ivory",
+		"eggshell","champagne","vanilla"]
+
+, "pattern": ["stripe","dot","spot","whorl","grid",
+		"swirl","triangle","square","circle","rectangle",
+		"oval","pentagon","hexagon","star","crescent",
+		"starburst","lemniscate"]
+
+, "genderNoun": ["man","woman"]
+
+, "regionAdj": ["hot","icy","cold","balmy","windy","rainy","drab","sunny"]
+, "regionNoun": ["forest","peak","hill","mountain","marsh","swamp","desert"]
+
+, "bodyType": ["lanky","thin","slender","slim","lean",
+		"skinny","spindly","spare","gangly","scrawny",
+		"skeletal","bony","gaunt","rawboned","rangy",
+		"weedy","waifish","sylphic","portly","stout",
+		"plump","fat","overweight","heavy","corpulent",
+		"fleshy","paunchy","pot-bellied","rotund","round",
+		"stumpy","stocky","bulky","muscular","strong",
+		"brawny","muscled","burly","sturdy","rugged",
+		"powerful","broad-shouldered","muscle-bound","beefy","husky",
+		"jacked","stalwart","toned","ripped","shredded",
+		"strapping","sinewy","robust","fit","hale","trim"]
+
+, "hairstyle": ["balding","shorn","short","cropped","tapered",
+		"flat-topped","quiffed","undercut","shaggy","long",
+		"braided","pig-tailed","tasseled","bun-wrapped","curtained",
+		"fish-tailed","layered","pageboy","permed","ponytailed",
+		"ringleted","updone","beehived","bobbed","cornrowed",
+		"dreadlocked","mohawked","fauxhawked","mulleted","spiked",
+		"pompadoured","rat-tailed","tonsured","poofy"]
+
+, "facialHair": ["shaven","smooth","stubbled","shadowed","bearded",
+		"chin-strapped","goateed","mustached","neck-bearded","sideburned",
+		"whiskered"]
+}
