@@ -21,6 +21,7 @@ import { initialState } from '@/store'
 import PanelActionsButton from '@/components/PanelActionsButton'
 import tracery from 'tracery-grammar'
 import grammar from '@/assets/grammar'
+import modal from '@/modal'
 
 const corpus = tracery.createGrammar(grammar)
 corpus.addModifiers(tracery.baseEngModifiers)
@@ -46,7 +47,7 @@ export default {
       },
       clearStorage: {
         method: this.clearStorage,
-        title: 'Clear Storage'
+        title: 'DEBUG: Clear Storage'
       }
     }
     return { actions }
@@ -58,6 +59,7 @@ export default {
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
       this.$store.commit('toggleAction', { action: 'scan' })
       // TODO: add modal for describing region & prompting for name
+	  modal.logModal(1)
     },
     log () {
       this.$store.commit('nameRegion', { name: 'Yhuli' })

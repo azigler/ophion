@@ -28,7 +28,7 @@ export function initialState () {
       processor: 0,
       bandwidth: 0
     },
-    availableActions: ['scan', 'log', 'reap', 'clearStorage'],
+    availableActions: ['scan', 'clearStorage'],
     log: [{ text: corpus.flatten('#initialLog#') }],
     regionName: undefined,
     credits: 400,
