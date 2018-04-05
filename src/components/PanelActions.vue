@@ -57,9 +57,12 @@ export default {
       const text = 'You fold open your beaming head...'
       this.$store.commit('addLog', { text })
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
-      this.$store.commit('toggleAction', { action: 'scan' })
+      // this.$store.commit('toggleAction', { action: 'scan' })
       // TODO: add modal for describing region & prompting for name
-	  modal.logModal(1)
+      modal.scanModal()
+      this.$store.commit('addAction', ['log', 'reap'])
+      // move to scanModal() ? probably not
+      this.$store.commit('removeAction', ['scan'])
     },
     log () {
       this.$store.commit('nameRegion', { name: 'Yhuli' })

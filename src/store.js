@@ -28,7 +28,7 @@ export function initialState () {
       processor: 0,
       bandwidth: 0
     },
-    availableActions: ['scan', 'clearStorage'],
+    availableActions: ['clearStorage', 'scan'],
     log: [{ text: corpus.flatten('#initialLog#') }],
     regionName: undefined,
     credits: 400,
@@ -62,6 +62,7 @@ export const store = new Vuex.Store({
     toggle (state, payload) {
       state[payload.property] = !state[payload.property]
     },
+    // TODO: rewrite? remove?
     toggleAction (state, payload) {
       if (state.availableActions.includes(payload.action)) {
         state.availableActions = state.availableActions.filter(e => e !== payload.action)
@@ -81,6 +82,17 @@ export const store = new Vuex.Store({
     nameRegion (state, payload) {
       state.regionName = payload.name
       console.log(`region named: ${state.regionName}`)
+    },
+    addAction (state, payload) {
+      state.availableActions = [...new Set([...state.availableActions, ...payload])]
+    },
+    removeAction (state, payload) {
+      state.availableActions = state.availableActions.filter(action => payload.indexOf(action) < 0)
+    }
+  },
+  getters: {
+    getLog: state => {
+      return state.log
     }
   },
   plugins: [createPersistedState({key: 'ophion'})]

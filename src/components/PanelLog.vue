@@ -8,7 +8,7 @@
         v-for="(entry, key) in this.log"
         :key="key"
         :class="[entry.hasModal ? 'has-modal' : '', 'log-entry']"
-        @click="modal.logModal(key)"
+        @click="logModal(key)"
       >
         {{ entry.text }}
       </p>
@@ -18,13 +18,18 @@
 
 <script>
 import { mapState } from 'vuex'
-import modal from '@/modal"
+import modal from '@/modal'
 
 export default {
   name: 'PanelLog',
   computed: mapState([
     'log'
-  ])
+  ]),
+  methods: {
+    logModal (key) {
+      modal.logModal(key)
+    }
+  }
 }
 </script>
 
