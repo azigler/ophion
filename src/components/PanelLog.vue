@@ -37,7 +37,7 @@ export default {
 .panel.log {
   display: grid;
   max-height: 19rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   .log-entry {
     text-align: left;

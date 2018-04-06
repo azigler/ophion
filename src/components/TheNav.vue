@@ -95,43 +95,46 @@ export default {
 </script>
 
 <style lang="scss">
-.navbar-brand {
+.navbar {
   border-bottom: 1px dotted white;
 
-  &.is-active {
-    border-bottom: initial;
+  .navbar-brand {
+
+    &.is-active {
+      border-bottom: initial;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+
+    .navbar-burger {
+      color: $white;
+      margin-top: 0.3rem;
+    }
   }
 
-  h1 {
-    font-weight: bold;
+  #mainNav.is-active {
+    border-bottom: 1px white dotted;
   }
 
-  .navbar-burger {
-    color: $white;
-    margin-top: 0.3rem;
+  .menu-item {
+    justify-content: center;
+    display: flex;
+
+    .icon {
+      padding-top: 0.375rem;
+      margin-right: 0.5625rem;
+    }
   }
-}
 
-#mainNav.is-active {
-  border-bottom: 1px white dotted;
-}
-
-.menu-item {
-  justify-content: center;
-  display: flex;
-
-  .icon {
-    padding-top: 0.375rem;
-    margin-right: 0.5625rem;
-  }
-}
-
-.navbar-item {
-  &:hover {
-    color: $primary;
-
-    span {
+  .navbar-item {
+    &:hover {
       color: $primary;
+
+      span {
+        color: $primary;
+      }
     }
   }
 }

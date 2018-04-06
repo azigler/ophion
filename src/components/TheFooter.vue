@@ -29,7 +29,6 @@ export default {
 
 <style lang="scss" scoped>
 .footer {
-  font-weight: bold;
   border-top: 1px dotted white;
   padding: 0.5rem 1rem 1rem;
   left: 0;
