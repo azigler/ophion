@@ -29,7 +29,7 @@ export function initialState () {
       bandwidth: 0
     },
     availableActions: ['clearStorage', 'scan'],
-    log: [{ text: corpus.flatten('#initialLog#') }],
+    log: [{ text: corpus.flatten('#initialLog.capitalize#...') }],
     regionName: undefined,
     credits: 400,
     progress: 0

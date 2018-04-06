@@ -1,9 +1,9 @@
 {
-  "initialLog": ["Your #gizmo.s# #gizmoVerb# to life...",
-		"You awaken to #longGizmo#...",
-		"#longGizmo.capitalize# interrupts your stasis#...",
-		"#adverbialPhrase.capitalize#, your #gizmo.s# regain #initialSensation#...",
-		"Your #gizmo.s# #gizmoVerb# with #initialSensation#..."]
+  "initialLog": ["your #gizmo.s# #gizmoVerb# to life",
+		"you awaken to #longGizmo#",
+		"#longGizmo# interrupts your stasis#",
+		"#adverbialPhrase#, your #gizmo.s# regain #initialSensation#",
+		"your #gizmo.s# #gizmoVerb# with #initialSensation#"]
 , "gizmo": ["sensor","gauge"]
 , "gizmoVerb": ["flicker","hiss"]
 , "longGizmo": ["your thrumming reactor","a rogue battery pulse","your biosensory mechanism"]

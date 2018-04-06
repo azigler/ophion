@@ -21,7 +21,7 @@ import { initialState } from '@/store'
 import PanelActionsButton from '@/components/PanelActionsButton'
 import tracery from 'tracery-grammar'
 import grammar from '@/assets/grammar'
-import modal from '@/modal'
+import ModalScanRegion from '@/components/ModalScanRegion'
 
 const corpus = tracery.createGrammar(grammar)
 corpus.addModifiers(tracery.baseEngModifiers)
@@ -57,7 +57,10 @@ export default {
       const text = 'You fold open your beaming head...'
       this.$store.commit('addLog', { text })
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
-      modal.scanModal()
+      this.$modal.open({
+        component: ModalScanRegion,
+        canCancel: ['x','escape']
+      })
       this.$store.commit('addAction', ['log', 'reap'])
       this.$store.commit('removeAction', ['scan'])
     },

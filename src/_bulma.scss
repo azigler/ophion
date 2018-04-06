@@ -15,10 +15,10 @@ $accent-invert: findColorInvert($accent);
 
 // Add colors to Bulma map
 $addColors: (
-  "primary":($primary, $primary-invert),
+  "primary": ($primary, $primary-invert),
   "secondary": ($secondary, $secondary-invert),
   "tertiary": ($tertiary, $tertiary-invert),
-  "accent":($accent, $accent-invert)
+  "accent": ($accent, $accent-invert)
 );
 $colors: map-merge($colors, $addColors);
 
