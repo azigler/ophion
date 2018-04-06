@@ -1,9 +1,15 @@
 {
-	"initialLog": ["Your sensors flicker to life...",
-		"You awaken to the churning heat of your battery...",
-		"Your clockwork innards interrupt your stasis...",
-		"All at once, your sensors regain functionality...",
-		"Your gauges hiss with sentience..."]
+  "initialLog": ["Your #gizmo.s# #gizmoVerb# to life...",
+		"You awaken to #longGizmo#...",
+		"#longGizmo.capitalize# interrupts your stasis#...",
+		"#adverbialPhrase.capitalize#, your #gizmo.s# regain #initialSensation#...",
+		"Your #gizmo.s# #gizmoVerb# with #initialSensation#..."]
+, "gizmo": ["sensor","gauge"]
+, "gizmoVerb": ["flicker","hiss"]
+, "longGizmo": ["your thrumming reactor","a rogue battery pulse","your biosensory mechanism"]
+, "adverbialPhrase": ["all at once","suddenly","with a start","with a pulsating beat"]
+, "initialSensation": ["sentience","functionality"]
+
 ,	"testLog": ["[#setPronouns#]#characterName# is a #bodyType# #genderNoun# hailing from the #regionAdj# #regionNoun.s# of #regionName#. #nounThey.capitalize# sports #color# #hairstyle# hair and eyes that glint with #color#."]
 ,	"setPronouns": ["[nounThey:she][nounThem:her][nounTheir:her][nounTheirs:hers]","[nounThey:he][nounThem:him][nounTheir:his][nounTheirs:his]"]
 
@@ -17,7 +23,7 @@
 		"ad","ed","id","od","ud",
 		"ssa","sse","ssi","sso","ssu"]
 
-,   "characterName": ["#mora.capitalize##mora#","#mora#'#mora.capitalize#","#mora.capitalize#-#mora#"]
+, "characterName": ["#mora.capitalize##mora#","#mora#'#mora.capitalize#","#mora.capitalize#-#mora#"]
 
 ,	"regionName": ["#mora.capitalize##mora#",
 		"#mora.capitalize##mora##mora#",

@@ -62,10 +62,9 @@ export const store = new Vuex.Store({
     toggle (state, payload) {
       state[payload.property] = !state[payload.property]
     },
-    // TODO: rewrite? remove?
     toggleAction (state, payload) {
       if (state.availableActions.includes(payload.action)) {
-        state.availableActions = state.availableActions.filter(e => e !== payload.action)
+        state.availableActions = state.availableActions.filter(action => action !== payload.action)
       } else {
         state.availableActions.push(payload.action)
       }
