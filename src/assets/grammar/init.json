@@ -1,15 +1,27 @@
 {
-  "fragment": ["your #gizmo.s# #gizmoVerb# to life",
+  "initFragment": ["your #gizmo.s# #gizmoVerb# with life",
 		"you awaken to #longGizmo#",
 		"#longGizmo# interrupts your stasis#",
-		"#adverbialPhrase#, your #gizmo.s# regain #initialSensation#",
-		"your #gizmo.s# #gizmoVerb# with #initialSensation#"]
-, "gizmo": ["sensor","gauge"]
-, "gizmoVerb": ["flicker","hiss"]
-, "longGizmo": ["your thrumming reactor","a rogue battery pulse","your biosensory mechanism"]
-, "adverbialPhrase": ["all at once","suddenly","with a start","with a pulsating beat"]
-, "initialSensation": ["sentience","functionality"]
+		"#adverbialPhrase#, your #gizmo.s# regain #initSensation#",
+		"your #gizmo.s# #gizmoVerb# with #initSensation#"]
+, "longGizmo": ["your thrumming reactor","a strong battery pulse","your warm chassis"]
+, "initSensation": ["sentience","functionality"]
 
-, "mysterious": ["mysterious","strange","peculiar","queer","odd","unknown"]
-, "namingInspiration": ["a holy matron-beacon","a sacred netnode","a famously pious spacebot"]
+, "sendBeacon": ["send a beacon","pulse out a message","attempt a connection","fire a ping"]
+, "noResponse": ["receive no response","are met only with silence","never receive a response","hear only silence"]
+, "inspiration": ["matron-beacon","netnode","spacebot","rogue network","rogue intelligence",
+    "cable-sister","sentient cloud","neuron hacker"]
+, "inspirationAdj": ["inspiring","beloved","nearby","visible","famous","inspirational"]
+, "namingInspiration": ["#holy# #inspiration#",
+    "#inspirationAdj# #holy# #inspiration#",
+    "#inspirationAdj# #inspiration#",
+    "#inspirationAdj# subjugator",
+    "#inspirationAdj# #spaceMatter#",
+    "detectable #spaceMatter#",
+    "#holy# #spaceMatter#",
+    "#inspirationAdj# #spaceMatter#"]
+
+, "scanLog": ["you #scanVerb# your #gizmo.s# to #scanFragment#"]
+, "scanFragment": ["gather intel","scan the area","scan the region","peer about",
+    "collect local information","detect nearby lifeforms","listen for life"]
 }

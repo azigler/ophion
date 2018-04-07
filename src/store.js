@@ -2,9 +2,12 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 import tracery from 'tracery-grammar'
+import baseGrammar from '@/assets/grammar/base'
 import initGrammar from '@/assets/grammar/init'
 
-const corpus = tracery.createGrammar(initGrammar)
+const grammar = {...initGrammar, ...baseGrammar}
+
+const corpus = tracery.createGrammar(grammar)
 corpus.addModifiers(tracery.baseEngModifiers)
 
 Vue.use(Vuex)
@@ -29,7 +32,7 @@ export function initialState () {
       bandwidth: 0
     },
     availableActions: ['clearStorage', 'scan'],
-    log: [{ text: corpus.flatten('#fragment.capitalize#...') }],
+    log: [{ text: corpus.flatten('#initFragment.capitalize#...') }],
     regionName: undefined,
     namingInspiration: undefined,
     credits: 400,

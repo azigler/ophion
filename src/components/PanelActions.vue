@@ -1,14 +1,14 @@
 <template>
-  <section class="is-parent tile is-6">
-    <div class="panel actions tile is-child box">
+  <section class='is-parent tile is-6'>
+    <div class='panel actions tile is-child box'>
       <h3>
         Actions
       </h3>
-      <div class="action-list">
+      <div class='action-list'>
         <action-button
-          v-for="(item, index) in availableActions"
-          :key="index"
-          v-bind="actions[item]"
+          v-for='(item, index) in availableActions'
+          :key='index'
+          v-bind='actions[item]'
         />
       </div>
     </div>
@@ -19,10 +19,10 @@
 import { mapState } from 'vuex'
 import { initialState } from '@/store'
 import PanelActionsButton from '@/components/PanelActionsButton'
+import ModalScanRegion from '@/components/ModalScanRegion'
 import tracery from 'tracery-grammar'
 import baseGrammar from '@/assets/grammar/base'
 import initGrammar from '@/assets/grammar/init'
-import ModalScanRegion from '@/components/ModalScanRegion'
 
 const grammar = {...initGrammar, ...baseGrammar}
 
@@ -53,10 +53,11 @@ export default {
   },
   methods: {
     scan () {
-      const text = 'You fold open your beaming head...'
-      this.$store.commit('setValue', { property: 'regionName', value: corpus.flatten('#regionName#') })
-      this.$store.commit('setValue', { property: 'namingInspiration', value: corpus.flatten('#namingInspiration#') })
-      this.$store.commit('addLog', { text, modal: 'scanRegion' })
+      const regionName = corpus.flatten('#regionName#') + ' ' + this.romanize(this.randomNumberInRange(1, 1000))
+
+      this.$store.commit('setValue', { property: 'regionName', value: regionName })
+      this.$store.commit('setValue', { property: 'namingInspiration', value: corpus.flatten('the #namingInspiration#') })
+      this.$store.commit('addLog', { text: corpus.flatten('#scanLog.capitalize#.'), modal: 'scanRegion' })
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
       this.$modal.open({
         component: ModalScanRegion
@@ -80,7 +81,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang='scss'>
 .panel {
   .action-list {
     text-align: left;

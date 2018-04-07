@@ -11,9 +11,9 @@
 
 <script>
 import tracery from 'tracery-grammar'
+import { store } from '@/store'
 import baseGrammar from '@/assets/grammar/base'
 import initGrammar from '@/assets/grammar/init'
-import { store } from '@/store'
 
 const grammar = {...initGrammar, ...baseGrammar}
 
@@ -23,9 +23,9 @@ corpus.addModifiers(tracery.baseEngModifiers)
 export default {
   name: 'ModalScanRegion',
   data () {
-    const topContent = corpus.flatten(`#fragment.capitalize#, and soon you are thrust into a strange world.`)
-    const botContent = corpus.flatten(`With your remaining battery power, your equipment pings the home server,
-      but receives no response. You name this #mysterious# world after ${store.getters.getNamingInspiration}, ${store.getters.getRegionName}.`)
+    const topContent = corpus.flatten(`#initFragment.capitalize#, and #adverbialPhrase# you perceive #mysterious.a# new #world#.`)
+    const botContent = corpus.flatten(`Using #longGizmo#, you #sendBeacon# to your origin,
+      but you #noResponse#. You name this #mysterious# #world# after ${store.getters.getNamingInspiration}, ${store.getters.getRegionName}.`)
 
     return { topContent, botContent }
   }

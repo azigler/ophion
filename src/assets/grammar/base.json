@@ -2,6 +2,21 @@
 	"testLog": ["[#setPronouns#]#characterName# is a #bodyType# #genderNoun# hailing from the #regionAdj# #regionNoun.s# of #regionName#. #nounThey.capitalize# sports #color# #hairstyle# hair and eyes that glint with #color#."]
 ,	"setPronouns": ["[nounThey:she][nounThem:her][nounTheir:her][nounTheirs:hers]","[nounThey:he][nounThem:him][nounTheir:his][nounTheirs:his]"]
 
+, "gizmo": ["sensor","gauge","dial","scale","gadget","detector","radar","mechanism"]
+, "mysterious": ["mysterious","strange","peculiar","queer","odd","unknown","weird"]
+, "world": ["world","region","planet","plane","location","spot","sanctuary","haven"]
+, "holy": ["holy","hallowed","blessed","consecrated","pious",
+		"venerated","revered","sacrosanct","inviolable","spiritual",
+		"devout"]
+, "spaceMatter": ["satellite","nebula","galaxy","star","gas giant",
+		"red dwarf","space debris","space dust","gas cloud","interstellar cloud",
+		"planet","asteroid","comet","asteroid belt"]
+
+, "adverbialPhrase": ["all at once","suddenly","with a jolt","with a pulsating beat"]
+
+, "gizmoVerb": ["flicker","hiss","blink","whirl"]
+, "scanVerb": ["fold open","uncurl","radiate","extend","deploy","scan"]
+
 ,	"mora": ["hla","hle","hli","hlo","hlu",
 		"qa","qe","qi","qo","qu",
 		"xan","xen","xin","xon","xun",

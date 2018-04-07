@@ -16,7 +16,17 @@
             >
               {{ $store.state.rates[key] }}/{{ heartbeat }}s
             </td>
-            <td class="value">{{ value }}</td>
+            <transition
+              name="slide-fade"
+              mode="out-in"
+            >
+              <td
+                class="value"
+                :key="value"
+              >
+                {{ value }}
+              </td>
+            </transition>
           </tr>
         </table>
       </div>
@@ -65,5 +75,17 @@ export default {
       }
     }
   }
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>
