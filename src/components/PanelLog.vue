@@ -7,8 +7,8 @@
       <p
         v-for="(entry, key) in this.log"
         :key="key"
-        :class="[entry.hasModal ? 'has-modal' : '', 'log-entry']"
-        @click="logModal(key)"
+        :class="[(entry.modal !==undefined) ? 'has-modal' : '', 'log-entry']"
+        @click="openModal(key)"
       >
         {{ entry.text }}
       </p>
@@ -19,6 +19,8 @@
 <script>
 import { mapState } from 'vuex'
 import modal from '@/modal'
+import { store } from '@/store'
+import ModalScanRegion from '@/components/ModalScanRegion'
 
 export default {
   name: 'PanelLog',
@@ -26,8 +28,18 @@ export default {
     'log'
   ]),
   methods: {
-    logModal (key) {
-      modal.logModal(key)
+    openModal (key) {
+      switch (store.getters.getLog[key].modal) {
+        case 'log':
+          modal.logModal(key)
+          break
+        case 'scanRegion':
+          this.$modal.open({
+            component: ModalScanRegion
+            // canCancel: ['x', 'escape']
+          })
+          break
+      }
     }
   }
 }

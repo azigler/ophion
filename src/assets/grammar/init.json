@@ -1,0 +1,15 @@
+{
+  "fragment": ["your #gizmo.s# #gizmoVerb# to life",
+		"you awaken to #longGizmo#",
+		"#longGizmo# interrupts your stasis#",
+		"#adverbialPhrase#, your #gizmo.s# regain #initialSensation#",
+		"your #gizmo.s# #gizmoVerb# with #initialSensation#"]
+, "gizmo": ["sensor","gauge"]
+, "gizmoVerb": ["flicker","hiss"]
+, "longGizmo": ["your thrumming reactor","a rogue battery pulse","your biosensory mechanism"]
+, "adverbialPhrase": ["all at once","suddenly","with a start","with a pulsating beat"]
+, "initialSensation": ["sentience","functionality"]
+
+, "mysterious": ["mysterious","strange","peculiar","queer","odd","unknown"]
+, "namingInspiration": ["a holy matron-beacon","a sacred netnode","a famously pious spacebot"]
+}

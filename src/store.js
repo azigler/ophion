@@ -2,9 +2,9 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 import tracery from 'tracery-grammar'
-import grammar from '@/assets/grammar'
+import initGrammar from '@/assets/grammar/init'
 
-const corpus = tracery.createGrammar(grammar)
+const corpus = tracery.createGrammar(initGrammar)
 corpus.addModifiers(tracery.baseEngModifiers)
 
 Vue.use(Vuex)
@@ -29,8 +29,9 @@ export function initialState () {
       bandwidth: 0
     },
     availableActions: ['clearStorage', 'scan'],
-    log: [{ text: corpus.flatten('#initialLog.capitalize#...') }],
+    log: [{ text: corpus.flatten('#fragment.capitalize#...') }],
     regionName: undefined,
+    namingInspiration: undefined,
     credits: 400,
     progress: 0
   }
@@ -78,9 +79,9 @@ export const store = new Vuex.Store({
         state.log.unshift(payload)
       }
     },
-    nameRegion (state, payload) {
-      state.regionName = payload.name
-      console.log(`region named: ${state.regionName}`)
+    setValue (state, payload) {
+      state[payload.property] = payload.value
+      console.log(`${payload.property} set to: ${payload.value}`)
     },
     addAction (state, payload) {
       state.availableActions = [...new Set([...state.availableActions, ...payload])]
@@ -92,6 +93,12 @@ export const store = new Vuex.Store({
   getters: {
     getLog: state => {
       return state.log
+    },
+    getRegionName: state => {
+      return state.regionName
+    },
+    getNamingInspiration: state => {
+      return state.namingInspiration
     }
   },
   plugins: [createPersistedState({key: 'ophion'})]

@@ -34,8 +34,22 @@ body {
   background: #0cebeb;
   background: linear-gradient(to bottom, #29ffc6, #20e3b2, #0cebeb);
 
+  .animation-content.modal-content {
+    box-shadow: -4px 5px 13px 1px #1b0a0a;
+  }
+
   .box {
     background-color: rgba(173, 193, 188, 0.6);
+  }
+
+  // bold purple modal
+  .animation-content.modal-content > .bold.purple {
+    background: linear-gradient(to bottom, #642b73, #c6426e);
+    color: $white;
+    display: block!important;
+    border: 2px solid #1b0a0a;
+    border-bottom: none;
+    box-shadow: 6px 5px 3px #1b0a0a;
   }
 
   .panel {

@@ -1,16 +1,5 @@
 {
-  "initialLog": ["your #gizmo.s# #gizmoVerb# to life",
-		"you awaken to #longGizmo#",
-		"#longGizmo# interrupts your stasis#",
-		"#adverbialPhrase#, your #gizmo.s# regain #initialSensation#",
-		"your #gizmo.s# #gizmoVerb# with #initialSensation#"]
-, "gizmo": ["sensor","gauge"]
-, "gizmoVerb": ["flicker","hiss"]
-, "longGizmo": ["your thrumming reactor","a rogue battery pulse","your biosensory mechanism"]
-, "adverbialPhrase": ["all at once","suddenly","with a start","with a pulsating beat"]
-, "initialSensation": ["sentience","functionality"]
-
-,	"testLog": ["[#setPronouns#]#characterName# is a #bodyType# #genderNoun# hailing from the #regionAdj# #regionNoun.s# of #regionName#. #nounThey.capitalize# sports #color# #hairstyle# hair and eyes that glint with #color#."]
+	"testLog": ["[#setPronouns#]#characterName# is a #bodyType# #genderNoun# hailing from the #regionAdj# #regionNoun.s# of #regionName#. #nounThey.capitalize# sports #color# #hairstyle# hair and eyes that glint with #color#."]
 ,	"setPronouns": ["[nounThey:she][nounThem:her][nounTheir:her][nounTheirs:hers]","[nounThey:he][nounThem:him][nounTheir:his][nounTheirs:his]"]
 
 ,	"mora": ["hla","hle","hli","hlo","hlu",

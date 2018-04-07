@@ -20,8 +20,11 @@ import { mapState } from 'vuex'
 import { initialState } from '@/store'
 import PanelActionsButton from '@/components/PanelActionsButton'
 import tracery from 'tracery-grammar'
-import grammar from '@/assets/grammar'
+import baseGrammar from '@/assets/grammar/base'
+import initGrammar from '@/assets/grammar/init'
 import ModalScanRegion from '@/components/ModalScanRegion'
+
+const grammar = {...initGrammar, ...baseGrammar}
 
 const corpus = tracery.createGrammar(grammar)
 corpus.addModifiers(tracery.baseEngModifiers)
@@ -37,10 +40,6 @@ export default {
         method: this.scan,
         title: 'Scan Region'
       },
-      log: {
-        method: this.log,
-        title: 'Log'
-      },
       reap: {
         method: this.reap,
         title: 'Reap'
@@ -55,23 +54,21 @@ export default {
   methods: {
     scan () {
       const text = 'You fold open your beaming head...'
-      this.$store.commit('addLog', { text })
+      this.$store.commit('setValue', { property: 'regionName', value: corpus.flatten('#regionName#') })
+      this.$store.commit('setValue', { property: 'namingInspiration', value: corpus.flatten('#namingInspiration#') })
+      this.$store.commit('addLog', { text, modal: 'scanRegion' })
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
       this.$modal.open({
-        component: ModalScanRegion,
-        canCancel: ['x','escape']
+        component: ModalScanRegion
+        // canCancel: ['x', 'escape']
       })
-      this.$store.commit('addAction', ['log', 'reap'])
+      this.$store.commit('addAction', ['reap'])
       this.$store.commit('removeAction', ['scan'])
-    },
-    log () {
-      this.$store.commit('nameRegion', { name: 'Yhuli' })
-      console.log(corpus.flatten('#regionName#'))
-      this.$store.commit('increment', { property: 'fibers', value: 1, stash: 'resources' })
     },
     reap () {
       this.$store.commit('increment', { property: 'progress', value: 1 })
-      this.$store.commit('addLog', { text: `${corpus.flatten('#testLog#')}`, hasModal: true })
+      this.$store.commit('increment', { property: 'fibers', value: 1, stash: 'resources' })
+      this.$store.commit('addLog', { text: `${corpus.flatten('#testLog#')}`, modal: 'log' })
     },
     clearStorage () {
       console.log('Resetting state...')
