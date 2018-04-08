@@ -1,14 +1,17 @@
 import Vue from 'vue'
+import VueHead from 'vue-head'
 import App from '@/App'
 import router from '@/router'
 import Buefy from 'buefy'
 import { store } from '@/store'
 
 Vue.use(Buefy)
+Vue.use(VueHead)
 
 Vue.mixin({
   methods: {
     // rewrite? currently takes 1-4999
+    // https://stackoverflow.com/questions/9083037/convert-a-number-into-a-roman-numeral-in-javascript
     romanize (num) {
       if (!+num) {
         return NaN

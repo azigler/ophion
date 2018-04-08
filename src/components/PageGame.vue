@@ -46,6 +46,14 @@ export default {
   },
   created () {
     setInterval(this.heartbeat, this.$store.state.heartbeat)
+  },
+  head: {
+    title: function () {
+      return {
+        inner: this.$store.state.head.inner,
+        separator: ' '
+      }
+    }
   }
 }
 </script>

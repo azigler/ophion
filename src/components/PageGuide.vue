@@ -23,7 +23,16 @@
 
 <script>
 export default {
-  name: 'PageGuide'
+  name: 'PageGuide',
+  head: {
+    title: function () {
+      return {
+        inner: this.$store.state.head.inner,
+        separator: '-',
+        complement: 'Guide'
+      }
+    }
+  }
 }
 </script>
 

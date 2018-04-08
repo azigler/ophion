@@ -1,6 +1,14 @@
 <template>
   <section class='is-parent tile is-6'>
     <div class='panel actions tile is-child box'>
+      <div class="reset">
+        <b-icon
+          pack="fa"
+          icon="trash-alt"
+          type="is-grey"
+          @click.native="clearStorage()"
+        />
+      </div>
       <h3>
         Actions
       </h3>
@@ -44,32 +52,43 @@ export default {
         method: this.reap,
         title: 'Reap'
       },
-      clearStorage: {
-        method: this.clearStorage,
-        title: 'DEBUG: Clear Storage'
+      mine: {
+        method: this.mine,
+        title: 'Mine'
+      },
+      build: {
+        method: this.build,
+        title: 'Build'
       }
     }
     return { actions }
   },
   methods: {
     scan () {
-      const regionName = corpus.flatten('#regionName#') + ' ' + this.romanize(this.randomNumberInRange(1, 1000))
-
+      const regionName = corpus.flatten('#regionName#') + ' ' + this.romanize(this.randomNumberInRange(1, 49))
       this.$store.commit('setValue', { property: 'regionName', value: regionName })
       this.$store.commit('setValue', { property: 'namingInspiration', value: corpus.flatten('the #namingInspiration#') })
       this.$store.commit('addLog', { text: corpus.flatten('#scanLog.capitalize#.'), modal: 'scanRegion' })
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
       this.$modal.open({
-        component: ModalScanRegion
-        // canCancel: ['x', 'escape']
+        component: ModalScanRegion,
+        canCancel: ['x', 'escape']
       })
-      this.$store.commit('addAction', ['reap'])
+      this.$store.commit('addAction', ['mine'])
       this.$store.commit('removeAction', ['scan'])
     },
-    reap () {
-      this.$store.commit('increment', { property: 'progress', value: 1 })
-      this.$store.commit('increment', { property: 'fibers', value: 1, stash: 'resources' })
+    mine () {
       this.$store.commit('addLog', { text: `${corpus.flatten('#testLog#')}`, modal: 'log' })
+      this.$store.commit('increment', { property: 'progress', value: 1 })
+      if (this.resources.energy > 0) {
+        this.$store.commit('increment', { property: 'energy', value: -1, stash: 'resources' })
+        this.$store.commit('increment', { property: 'minerals', value: 1, stash: 'resources' })
+      } else {
+        console.log('Not enough energy!')
+      }
+    },
+    build () {
+      // launch build modal
     },
     clearStorage () {
       console.log('Resetting state...')
@@ -82,7 +101,20 @@ export default {
 </script>
 
 <style lang='scss'>
-.panel {
+.panel.actions {
+  position: relative;
+
+  .reset {
+    top: 0%;
+    left: 93%;
+    position: absolute;
+    font-size: 9px!important;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   .action-list {
     text-align: left;
   }

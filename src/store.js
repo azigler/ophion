@@ -31,7 +31,10 @@ export function initialState () {
       processor: 0,
       bandwidth: 0
     },
-    availableActions: ['clearStorage', 'scan'],
+    head: {
+      inner: 'Ophion'
+    },
+    availableActions: ['scan'],
     log: [{ text: corpus.flatten('#initFragment.capitalize#...') }],
     regionName: undefined,
     namingInspiration: undefined,

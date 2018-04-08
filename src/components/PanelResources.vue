@@ -17,7 +17,7 @@
               {{ $store.state.rates[key] }}/{{ heartbeat }}s
             </td>
             <transition
-              name="slide-fade"
+              name="flash"
               mode="out-in"
             >
               <td
@@ -59,6 +59,18 @@ export default {
   .resource-list {
     display: inline-table;
 
+    .flash-enter-active {
+      transition: all .3s ease;
+    }
+    .flash-leave-active {
+      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .flash-enter, .flash-leave-to {
+      color: $yellow;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
     td {
       &.key {
         padding-right: 1.5rem;
@@ -75,17 +87,5 @@ export default {
       }
     }
   }
-}
-
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for <2.1.8 */ {
-  transform: translateX(10px);
-  opacity: 0;
 }
 </style>

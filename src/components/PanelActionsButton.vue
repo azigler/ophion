@@ -1,6 +1,6 @@
 <template>
   <button
-    class="button is-small is-accent"
+    class="button is-accent"
     @click="method"
   >
     {{ title }}
