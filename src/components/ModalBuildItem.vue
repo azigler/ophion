@@ -65,8 +65,6 @@ export default {
         this.$store.commit('increment', { property: resource, value: -cost[resource], stash: 'resources' })
       }
       console.log(`built: ${name}`)
-
-      // TODO: add structure to structures panel
       this.$store.commit('addStructure', {name, value: 1})
     }
   }
