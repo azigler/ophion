@@ -18,7 +18,7 @@
       class="button is-small is-primary is-pulled-right"
       @click="build(name, cost)"
     >
-      buy
+      build
     </button>
   </div>
 </template>
@@ -67,7 +67,7 @@ export default {
       console.log(`built: ${name}`)
 
       // TODO: add structure to structures panel
-
+      this.$store.commit('addStructure', {name, value: 1})
     }
   }
 }

@@ -4,6 +4,21 @@
       <h3>
         Structures
       </h3>
+      <table class="structure-list">
+        <tr
+          v-for="(value, key) in this.$store.state.structures"
+          v-if="value > 0"
+          :key="key"
+        >
+          <td class="key">{{ key }}</td>
+          <td
+            class="value"
+            :key="value"
+          >
+            {{ value }}
+          </td>
+        </tr>
+      </table>
     </div>
   </section>
 </template>
@@ -14,3 +29,23 @@ export default {
   // TODO: add onBuy logic to check name against collection of functions and eval if found
 }
 </script>
+
+<style lang="scss">
+.structures {
+  display: grid;
+
+  .structure-list {
+    display: inline-table;
+
+    td {
+      &.key {
+        padding-right: 1.5rem;
+      }
+      &.value {
+        padding-left: 2.5rem;
+        min-width: 4rem;
+      }
+    }
+  }
+}
+</style>

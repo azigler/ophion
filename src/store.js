@@ -34,6 +34,9 @@ export function initialState () {
       processor: 0,
       bandwidth: 0
     },
+    structures: {
+      item1: 0
+    },
     head: {
       inner: 'Ophion'
     },
@@ -95,6 +98,9 @@ export const store = new Vuex.Store({
     },
     removeAction (state, payload) {
       state.availableActions = state.availableActions.filter(action => payload.indexOf(action) < 0)
+    },
+    addStructure (state, payload) {
+      state.structures[payload.name] += payload.value
     }
   },
   getters: {

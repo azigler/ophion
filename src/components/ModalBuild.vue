@@ -43,7 +43,7 @@ export default {
 
 <style lang="scss" scoped>
 .modal-build {
-  min-height: 260px;
+  min-height: 300px;
 }
 
 @media screen and (min-width: 768px) {
@@ -53,6 +53,7 @@ export default {
 }
 
 .panel-build {
-  min-width: 50%;
+  width: 100%;
+  min-width: 50%
 }
 </style>

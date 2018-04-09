@@ -53,9 +53,9 @@ export default {
         method: this.reap,
         title: 'Reap'
       },
-      mine: {
-        method: this.mine,
-        title: 'Mine'
+      dig: {
+        method: this.dig,
+        title: 'Dig'
       },
       build: {
         method: this.build,
@@ -74,10 +74,10 @@ export default {
       this.$modal.open({
         component: ModalScanRegion
       })
-      this.$store.commit('addAction', ['mine', 'build'])
+      this.$store.commit('addAction', ['dig', 'build'])
       this.$store.commit('removeAction', ['scan'])
     },
-    mine () {
+    dig () {
       this.$store.commit('addLog', { text: `${corpus.flatten('#testLog#')}`, modal: 'log' })
       this.$store.commit('increment', { property: 'exp', value: 1 })
       if (this.resources.energy > 0) {
@@ -117,7 +117,7 @@ export default {
       cursor: pointer;
 
       .has-text-grey {
-        color: $white!important;
+        color: $yellow!important;
       }
     }
   }
