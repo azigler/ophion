@@ -17,6 +17,9 @@ export function initialState () {
     tick: 0,
     heartbeat: 10000,
     logLength: 100,
+    level: 1,
+    exp: 0,
+    maxExp: 100,
     resources: {
       energy: 0,
       minerals: 0,
@@ -37,9 +40,7 @@ export function initialState () {
     availableActions: ['scan'],
     log: [{ text: corpus.flatten('#initFragment.capitalize#...') }],
     regionName: undefined,
-    namingInspiration: undefined,
-    credits: 400,
-    progress: 0
+    namingInspiration: undefined
   }
 }
 

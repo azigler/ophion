@@ -31,8 +31,7 @@ body {
   // Prevent overscroll
   height: 100%;
   overflow: auto;
-  background: #0cebeb;
-  background: linear-gradient(to bottom, #29ffc6, #20e3b2, #0cebeb);
+  background: linear-gradient(to bottom, #642b73, #c6426e);
 
   .animation-content.modal-content {
     box-shadow: -4px 5px 13px 1px #1b0a0a;

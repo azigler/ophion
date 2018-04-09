@@ -1,0 +1,83 @@
+{  
+  "item1":{  
+     "name":"item1",
+     "desc":"item 1",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":1
+  },
+  "item2":{  
+     "name":"item2",
+     "desc":"item 2",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":2
+  },
+  "item3":{  
+     "name":"item3",
+     "desc":"item 3",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":2
+  },
+  "item4":{  
+     "name":"item4",
+     "desc":"item 4",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":2
+  },
+  "item5":{  
+     "name":"item5",
+     "desc":"item 5",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":2
+  },
+  "item6":{  
+     "name":"item6",
+     "desc":"item 6",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":2
+  },
+  "item7":{  
+     "name":"item7",
+     "desc":"item 7",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":2
+  },
+  "item8":{  
+     "name":"item8",
+     "desc":"item 8",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":2
+  },
+  "item9":{  
+     "name":"item9",
+     "desc":"item 9",
+     "cost":{  
+        "minerals":1
+     },
+     "levelReq":2
+  },
+  "item10":{  
+     "name":"item10",
+     "desc":"item 10",
+     "cost":{  
+        "minerals":1,
+        "fibers":2
+     },
+     "levelReq":2
+  }
+}

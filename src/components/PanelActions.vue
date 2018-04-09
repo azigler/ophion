@@ -28,6 +28,7 @@ import { mapState } from 'vuex'
 import { initialState } from '@/store'
 import PanelActionsButton from '@/components/PanelActionsButton'
 import ModalScanRegion from '@/components/ModalScanRegion'
+import ModalBuild from '@/components/ModalBuild'
 import tracery from 'tracery-grammar'
 import baseGrammar from '@/assets/grammar/base'
 import initGrammar from '@/assets/grammar/init'
@@ -71,15 +72,14 @@ export default {
       this.$store.commit('addLog', { text: corpus.flatten('#scanLog.capitalize#.'), modal: 'scanRegion' })
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
       this.$modal.open({
-        component: ModalScanRegion,
-        canCancel: ['x', 'escape']
+        component: ModalScanRegion
       })
-      this.$store.commit('addAction', ['mine'])
+      this.$store.commit('addAction', ['mine', 'build'])
       this.$store.commit('removeAction', ['scan'])
     },
     mine () {
       this.$store.commit('addLog', { text: `${corpus.flatten('#testLog#')}`, modal: 'log' })
-      this.$store.commit('increment', { property: 'progress', value: 1 })
+      this.$store.commit('increment', { property: 'exp', value: 1 })
       if (this.resources.energy > 0) {
         this.$store.commit('increment', { property: 'energy', value: -1, stash: 'resources' })
         this.$store.commit('increment', { property: 'minerals', value: 1, stash: 'resources' })
@@ -88,7 +88,10 @@ export default {
       }
     },
     build () {
-      // launch build modal
+      this.$modal.open({
+        component: ModalBuild,
+        parent: this
+      })
     },
     clearStorage () {
       console.log('Resetting state...')
@@ -112,6 +115,10 @@ export default {
 
     &:hover {
       cursor: pointer;
+
+      .has-text-grey {
+        color: $white!important;
+      }
     }
   }
 

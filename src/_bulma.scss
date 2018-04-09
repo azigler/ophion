@@ -3,9 +3,9 @@
 
 // Set theme colors
 $primary: #152B42;
-$secondary: #FFAE0D;
+$secondary: #C900A9;
 $tertiary: #0CEBEB;
-$accent: #FB6000;
+$accent: #5A008E;
 
 // Invert for all theme colors
 $primary-invert: findColorInvert($primary);
@@ -40,8 +40,8 @@ $link-hover: $primary-invert;
 $text: $primary;
 
 // Progress bar
-$progress-bar-background-color: $secondary;
-$progress-value-background-color: $secondary-invert;
+$progress-bar-background-color: $primary;
+$progress-value-background-color: $secondary;
 
 // Import Bulma and Buefy
 @import "~bulma";

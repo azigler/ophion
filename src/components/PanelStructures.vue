@@ -11,5 +11,6 @@
 <script>
 export default {
   name: 'PanelStructures'
+  // TODO: add onBuy logic to check name against collection of functions and eval if found
 }
 </script>

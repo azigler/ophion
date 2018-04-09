@@ -96,7 +96,7 @@ export default {
 
 <style lang="scss">
 .navbar {
-  border-bottom: 1px dotted white;
+  border-bottom: 1px dotted $primary;
 
   .navbar-brand {
 
@@ -115,7 +115,7 @@ export default {
   }
 
   #mainNav.is-active {
-    border-bottom: 1px white dotted;
+    border-bottom: 1px white $primary;
   }
 
   .menu-item {
