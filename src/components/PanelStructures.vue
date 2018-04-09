@@ -42,8 +42,9 @@ export default {
         padding-right: 1.5rem;
       }
       &.value {
-        padding-left: 2.5rem;
+        padding-left: 4rem;
         min-width: 4rem;
+        text-align: right;
       }
     }
   }
