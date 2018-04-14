@@ -14,7 +14,7 @@
               class="rate"
               :class="aboveZero($store.state.rates[key])"
             >
-              {{ $store.state.rates[key] }}/{{ heartbeat }}s
+              {{ $store.state.rates[key] }}/{{ heartrate }}s
             </td>
             <transition
               name="flash"
@@ -38,8 +38,8 @@
 export default {
   name: 'PanelResources',
   computed: {
-    heartbeat: function () {
-      return this.$store.state.heartbeat / 1000
+    heartrate: function () {
+      return this.$store.state.heartrate / 1000
     }
   },
   methods: {
@@ -58,18 +58,6 @@ export default {
 
   .resource-list {
     display: inline-table;
-
-    .flash-enter-active {
-      transition: all .3s ease;
-    }
-    .flash-leave-active {
-      transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-    }
-    .flash-enter, .flash-leave-to {
-      color: $yellow;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
 
     td {
       &.key {

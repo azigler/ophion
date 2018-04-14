@@ -5,7 +5,7 @@
         <b-icon
           pack="fa"
           icon="trash-alt"
-          type="is-grey"
+          type="is-dark-grey"
           @click.native="clearStorage()"
         />
       </div>
@@ -116,7 +116,7 @@ export default {
     &:hover {
       cursor: pointer;
 
-      .has-text-grey {
+      .has-text-dark {
         color: $yellow!important;
       }
     }

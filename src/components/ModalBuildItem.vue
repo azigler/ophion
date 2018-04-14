@@ -74,7 +74,8 @@ export default {
 <style lang="scss" scoped>
 .build-item {
   min-width: 100%;
-  background: rgba(173, 193, 188, 0.6);
+  background: $transBox;
+  background-image: $hexagonSVG;
 
   .header {
     font-weight: bold;

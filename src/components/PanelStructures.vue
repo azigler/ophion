@@ -11,12 +11,17 @@
           :key="key"
         >
           <td class="key">{{ key }}</td>
-          <td
-            class="value"
-            :key="value"
+          <transition
+            name="flash"
+            mode="out-in"
           >
-            {{ value }}
-          </td>
+            <td
+              class="value"
+              :key="value"
+            >
+              {{ value }}
+            </td>
+          </transition>
         </tr>
       </table>
     </div>

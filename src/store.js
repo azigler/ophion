@@ -14,8 +14,8 @@ Vue.use(Vuex)
 
 export function initialState () {
   return {
-    tick: 0,
-    heartbeat: 10000,
+    beat: 0,
+    heartrate: 10000,
     logLength: 100,
     level: 1,
     exp: 0,

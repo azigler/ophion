@@ -7,7 +7,7 @@
       <p
         v-for="(entry, key) in this.log"
         :key="key"
-        :class="[(entry.modal !==undefined) ? 'has-modal' : '', 'log-entry']"
+        :class="[(entry.modal !== undefined) ? 'has-modal' : '', 'log-entry']"
         @click="openModal(key)"
       >
         {{ entry.text }}
@@ -76,7 +76,7 @@ export default {
 
 .box {
   &.log-modal {
-    background-color:$accent;
+    background-color: $accent;
     color: $white;
   }
 }

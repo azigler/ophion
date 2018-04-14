@@ -38,10 +38,11 @@ body {
   }
 
   .box {
-    background-color: rgba(173, 193, 188, 0.6);
+    background-color: $transBox;
+    background-image: $circuitBoardSVG;
   }
 
-  // bold purple modal
+  // Bold purple modal
   .animation-content.modal-content > .bold.purple {
     background: linear-gradient(to bottom, #642b73, #c6426e);
     color: $white;
@@ -49,6 +50,17 @@ body {
     border: 2px solid #1b0a0a;
     border-bottom: none;
     box-shadow: 6px 5px 3px #1b0a0a;
+  }
+
+  // Animations
+  .flash-enter-active {
+    transition: all .3s ease;
+  }
+  .flash-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  }
+  .flash-enter, .flash-leave-to {
+    color: $yellow;
   }
 
   .panel {

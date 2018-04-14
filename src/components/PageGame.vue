@@ -45,7 +45,7 @@ export default {
     }
   },
   created () {
-    setInterval(this.heartbeat, this.$store.state.heartbeat)
+    setInterval(this.heartbeat, this.$store.state.heartrate)
   },
   head: {
     title: function () {
