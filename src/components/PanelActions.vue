@@ -41,7 +41,7 @@ corpus.addModifiers(tracery.baseEngModifiers)
 export default {
   name: 'PanelActions',
   computed: mapState([
-    'regionName', 'resources', 'age', 'availableActions'
+    'regionName', 'resources', 'age', 'availableActions', 'namingInspiration', 'regionName'
   ]),
   data () {
     const actions = {
@@ -66,25 +66,37 @@ export default {
   },
   methods: {
     scan () {
+      // set initial values
       const regionName = corpus.flatten('#regionName#') + ' ' + this.romanize(this.randomNumberInRange(1, 49))
       this.$store.commit('setValue', { property: 'regionName', value: regionName })
       this.$store.commit('setValue', { property: 'namingInspiration', value: corpus.flatten('the #namingInspiration#') })
-      this.$store.commit('addLog', { text: corpus.flatten('#scanLog.capitalize#.'), modal: 'scanRegion' })
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
+
+      // write modal content
+      const topContent = corpus.flatten(`#initFragment.capitalize#, and #adverbialPhrase# you perceive #mysterious.a# new #world#.`)
+      const botContent = corpus.flatten(`Using #longGizmo#, you #sendBeacon# to your origin, but you #noResponse#. You name this #mysterious# #world# after ${this.$store.state.namingInspiration}, ${this.$store.state.regionName}.`)
+
+      // launch modal
+      this.$store.commit('addLog', { text: corpus.flatten('#scanLog.capitalize#.'), modal: 'scanRegion', props: { topContent, botContent } })
       this.$modal.open({
-        component: ModalScanRegion
+        component: ModalScanRegion,
+        props: { topContent, botContent }
       })
+
+      // update actions
       this.$store.commit('addAction', ['dig', 'build'])
       this.$store.commit('removeAction', ['scan'])
     },
     dig () {
-      this.$store.commit('addLog', { text: `${corpus.flatten('#testLog#')}`, modal: 'log' })
       if (this.resources.energy > 0) {
+        this.$store.commit('addLog', { text: `${corpus.flatten('#testLog#')}`, modal: 'log' })
         this.$store.commit('increment', { property: 'exp', value: 10 })
         this.$store.commit('increment', { property: 'energy', value: -1, stash: 'resources' })
         this.$store.commit('increment', { property: 'minerals', value: 1, stash: 'resources' })
       } else {
         console.log('Not enough energy!')
+        // DEBUG: increment anyways
+        this.$store.commit('increment', { property: 'exp', value: 10 })
       }
     },
     build () {

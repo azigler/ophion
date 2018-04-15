@@ -2,23 +2,19 @@
   "tentaCLAW": {
     "id": "tentaCLAW",
     "name": "tentaC.L.A.W.",
-    "desc": "item 1",
+    "desc": "a chitinsteel tentacle-claw, extending from your core. roots into the ground and consumes minerals beneath the surface. due to your encryption protocol, each successive tentaclaw's biohash is increasingly expensive to mineralize.",
     "cost": {  
-      "minerals": 1.2
-    },
-    "requirement": {
-      "level": 1
+      "minerals": 1.2,
+      "energy": 1.08
     }
   },
   "solarTurf": {
     "id": "solarTurf",
     "name": "solar turf",
-    "desc": "item 1",
+    "desc": "a lightweight roll of flexible solar silicon. deployed efficiently via a pneumatic cannon. the first few turfs are close and easy to dispatch, but later ones require a great dedication of energy.",
     "cost": {  
-      "minerals": 1.3
-    },
-    "requirement": {
-      "level": 1
+      "minerals": 1.08,
+      "energy": 1.3
     }
   }
 }

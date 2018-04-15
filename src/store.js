@@ -22,17 +22,11 @@ export function initialState () {
     maxExp: 100,
     resources: {
       energy: 0,
-      minerals: 0,
-      fibers: 0,
-      processor: 0,
-      bandwidth: 0
+      minerals: 0
     },
     rates: {
       energy: 0,
-      minerals: 0,
-      fibers: 0,
-      processor: 0,
-      bandwidth: 0
+      minerals: 0
     },
     structures: {
       tentaCLAW: 0,

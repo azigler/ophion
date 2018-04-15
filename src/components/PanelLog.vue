@@ -21,6 +21,7 @@ import { mapState } from 'vuex'
 import modal from '@/modal'
 import { store } from '@/store'
 import ModalScanRegion from '@/components/ModalScanRegion'
+import ModalLevelUp from '@/components/ModalLevelUp'
 
 export default {
   name: 'PanelLog',
@@ -35,7 +36,15 @@ export default {
           break
         case 'scanRegion':
           this.$modal.open({
-            component: ModalScanRegion
+            component: ModalScanRegion,
+            props: store.getters.getLog[key].props
+            // canCancel: ['x', 'escape']
+          })
+          break
+        case 'levelUp':
+          this.$modal.open({
+            component: ModalLevelUp,
+            props: store.getters.getLog[key].props
             // canCancel: ['x', 'escape']
           })
           break

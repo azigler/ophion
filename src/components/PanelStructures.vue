@@ -38,7 +38,6 @@ export default {
       return structureList[key].name
     }
   }
-  // TODO: add onBuy logic to check name against collection of functions and eval if found
 }
 </script>
 
@@ -55,7 +54,6 @@ export default {
         padding-right: 1.5rem;
       }
       &.value {
-        padding-left: 4rem;
         min-width: 4rem;
         text-align: right;
       }

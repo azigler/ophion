@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import ModalLevelUp from '@/components/ModalLevelUp'
 import { mapState } from 'vuex'
 
 export default {
@@ -27,12 +28,29 @@ export default {
   watch: {
     exp () {
       if (this.exp >= this.maxExp) {
+        // increase level
         this.$store.commit('increment', { property: 'level', value: 1 })
-        // TODO: save rollover experience
-        this.$store.commit('setValue', { property: 'exp', value: 0 })
+
+        // calculate leftover experience
+        const leftoverExp = this.exp - this.maxExp
+        this.$store.commit('setValue', { property: 'exp', value: leftoverExp })
+
+        // calculate new max experience
         const newMaxExp = Math.floor(100 * Math.pow(this.level, (3 / 2)))
         this.$store.commit('setValue', { property: 'maxExp', value: newMaxExp })
+
+        // TODO: calculate level up rewards
+
+        // TODO: write level up modal content
+
+        // announce level up and launch modal
         console.log('level up!')
+        // TODO: save level up modal content to log
+        this.$store.commit('addLog', { text: `You reached level ${this.level}!`, modal: 'levelUp' })
+        this.$modal.open({
+          component: ModalLevelUp
+          // TODO: add props object
+        })
       }
     }
   }

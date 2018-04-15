@@ -29,7 +29,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'ModalBuildMenuItem',
   data () {
-    const scaledCost = this.returnScaledCost(this.id, this.cost, this.$store.state.level)
+    let scaledCost = this.returnScaledCost(this.id, this.cost, this.$store.state.level)
     return { scaledCost }
   },
   computed: mapState([
@@ -54,7 +54,12 @@ export default {
     },
     requirement: {
       type: Object,
-      default: function () { return {} }
+      default: function () { return { level: 1 } }
+    }
+  },
+  watch: {
+    level () {
+      this.scaledCost = this.returnScaledCost(this.id, this.cost, this.$store.state.level)
     }
   },
   methods: {
@@ -69,10 +74,12 @@ export default {
           scaledCost[resource] = 1
         }
       }
+      console.log('cost scaled...')
       return scaledCost
     },
     build (name, cost) {
       // check if can build
+      this.scaledCost = this.returnScaledCost(this.id, this.cost, this.$store.state.level)
       for (let resource in cost) {
         if (this.resources[resource] >= cost[resource]) {
           console.log(`pass: enough ${resource} for ${name}`)

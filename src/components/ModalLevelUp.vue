@@ -11,21 +11,19 @@
 
 <script>
 export default {
-  name: 'ModalScanRegion',
-  props: {
-    topContent: {
-      type: String,
-      default: 'top content'
-    },
-    botContent: {
-      type: String,
-      default: 'bot content'
-    }
+  name: 'ModalLevelUp',
+  data () {
+    const topContent = 'top content'
+    const botContent = 'bottom content'
+
+    return { topContent, botContent }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+// TODO: customize styles
+
 .top {
   min-height: 6rem;
   text-align: center;

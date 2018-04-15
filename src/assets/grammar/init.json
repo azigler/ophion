@@ -1,9 +1,9 @@
 {
   "initFragment": ["your #gizmo.s# #gizmoVerb# with life",
-		"you awaken to #longGizmo#",
-		"#longGizmo# interrupts your stasis#",
-		"#adverbialPhrase#, your #gizmo.s# regain #initSensation#",
-		"your #gizmo.s# #gizmoVerb# with #initSensation#"]
+    "you awaken to #longGizmo#",
+    "#longGizmo# interrupts your stasis#",
+    "#adverbialPhrase#, your #gizmo.s# regain #initSensation#",
+    "your #gizmo.s# #gizmoVerb# with #initSensation#"]
 , "longGizmo": ["your thrumming reactor","a strong battery pulse","your warm chassis"]
 , "initSensation": ["sentience","functionality"]
 
