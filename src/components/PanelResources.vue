@@ -58,6 +58,7 @@ export default {
 
   .resource-list {
     display: inline-table;
+    width: 100%;
 
     td {
       &.key {

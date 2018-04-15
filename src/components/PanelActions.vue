@@ -79,8 +79,8 @@ export default {
     },
     dig () {
       this.$store.commit('addLog', { text: `${corpus.flatten('#testLog#')}`, modal: 'log' })
-      this.$store.commit('increment', { property: 'exp', value: 1 })
       if (this.resources.energy > 0) {
+        this.$store.commit('increment', { property: 'exp', value: 10 })
         this.$store.commit('increment', { property: 'energy', value: -1, stash: 'resources' })
         this.$store.commit('increment', { property: 'minerals', value: 1, stash: 'resources' })
       } else {

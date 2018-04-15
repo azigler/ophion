@@ -23,7 +23,19 @@ export default {
   name: 'TheFooter',
   computed: mapState([
     'regionName', 'level', 'exp', 'maxExp'
-  ])
+  ]),
+  watch: {
+    exp () {
+      if (this.exp >= this.maxExp) {
+        this.$store.commit('increment', { property: 'level', value: 1 })
+        // TODO: save rollover experience
+        this.$store.commit('setValue', { property: 'exp', value: 0 })
+        const newMaxExp = Math.floor(100 * Math.pow(this.level, (3 / 2)))
+        this.$store.commit('setValue', { property: 'maxExp', value: newMaxExp })
+        console.log('level up!')
+      }
+    }
+  }
 }
 </script>
 

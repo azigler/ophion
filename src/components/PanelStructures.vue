@@ -10,7 +10,7 @@
           v-if="value > 0"
           :key="key"
         >
-          <td class="key">{{ key }}</td>
+          <td class="key">{{ getName(key) }}</td>
           <transition
             name="flash"
             mode="out-in"
@@ -29,8 +29,15 @@
 </template>
 
 <script>
+import structureList from '@/assets/structures'
+
 export default {
-  name: 'PanelStructures'
+  name: 'PanelStructures',
+  methods: {
+    getName (key) {
+      return structureList[key].name
+    }
+  }
   // TODO: add onBuy logic to check name against collection of functions and eval if found
 }
 </script>
@@ -41,6 +48,7 @@ export default {
 
   .structure-list {
     display: inline-table;
+    width: 100%;
 
     td {
       &.key {

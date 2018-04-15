@@ -35,7 +35,8 @@ export function initialState () {
       bandwidth: 0
     },
     structures: {
-      item1: 0
+      tentaCLAW: 0,
+      solarTurf: 0
     },
     head: {
       inner: 'Ophion'
