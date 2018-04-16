@@ -69,15 +69,15 @@ export default {
       // set initial values
       const regionName = corpus.flatten('#regionName#') + ' ' + this.romanize(this.randomNumberInRange(1, 49))
       this.$store.commit('setValue', { property: 'regionName', value: regionName })
-      this.$store.commit('setValue', { property: 'namingInspiration', value: corpus.flatten('the #namingInspiration#') })
+      const namingInspiration = corpus.flatten('the #namingInspiration#')
       this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
 
       // write modal content
       const topContent = corpus.flatten(`#initFragment.capitalize#, and #adverbialPhrase# you perceive #mysterious.a# new #world#.`)
-      const botContent = corpus.flatten(`Using #longGizmo#, you #sendBeacon# to your origin, but you #noResponse#. You name this #mysterious# #world# after ${this.$store.state.namingInspiration}, ${this.$store.state.regionName}.`)
+      const botContent = corpus.flatten(`Using #longGizmo#, you #sendBeacon# to your origin, but you #noResponse#. You name this #mysterious# #world# after ${namingInspiration}, ${this.$store.state.regionName}.`)
 
       // launch modal
-      this.$store.commit('addLog', { text: corpus.flatten('#scanLog.capitalize#.'), modal: 'scanRegion', props: { topContent, botContent } })
+      this.$store.commit('addLog', { text: corpus.flatten('#scanLog.capitalize#.'), modal: 'scanRegion', props: { topContent, botContent, namingInspiration } })
       this.$modal.open({
         component: ModalScanRegion,
         props: { topContent, botContent }

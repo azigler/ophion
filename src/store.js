@@ -37,8 +37,7 @@ export function initialState () {
     },
     availableActions: ['scan'],
     log: [{ text: corpus.flatten('#initFragment.capitalize#...') }],
-    regionName: undefined,
-    namingInspiration: undefined
+    regionName: undefined
   }
 }
 
