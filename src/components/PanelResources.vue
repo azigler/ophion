@@ -22,6 +22,7 @@
             >
               <td
                 class="value"
+                :class="valueClass(key, value)"
                 :key="value"
               >
                 {{ value }}
@@ -43,9 +44,14 @@ export default {
     }
   },
   methods: {
-    aboveZero: function (key) {
+    aboveZero (key) {
       if (key <= 0) {
         return 'is-invisible'
+      }
+    },
+    valueClass (key, value) {
+      if (value === this.$store.state.maxResources[key]) {
+        return 'has-text-weight-bold'
       }
     }
   }

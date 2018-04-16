@@ -40,6 +40,10 @@ export default {
       for (let rate in this.$store.state.rates) {
         if (this.$store.state.rates[rate] > 0) {
           this.$store.commit('increment', { property: rate, value: this.$store.state.rates[rate], stash: 'resources' })
+          if (this.$store.state.resources[rate] >= this.$store.state.maxResources[rate]) {
+            console.log(`storage maximum: ${rate}`)
+            this.$store.commit('setValue', { stash: 'resources', property: rate, value: this.$store.state.maxResources[rate] })
+          }
         }
       }
     }

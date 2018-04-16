@@ -24,6 +24,10 @@ export function initialState () {
       energy: 0,
       minerals: 0
     },
+    maxResources: {
+      energy: 10000,
+      minerals: 10000
+    },
     rates: {
       energy: 0,
       minerals: 0
@@ -84,8 +88,18 @@ export const store = new Vuex.Store({
       }
     },
     setValue (state, payload) {
-      state[payload.property] = payload.value
-      console.log(`${payload.property} set to: ${payload.value}`)
+      if (payload.stash) {
+        const stash = state[payload.stash]
+        stash[payload.property] = payload.value
+        if (payload.value > 0) {
+          console.log(`${payload.stash}.${payload.property} set to: ${stash[payload.property]}`)
+        } else {
+          console.log(`${payload.stash}.${payload.property} set to: ${stash[payload.property]}`)
+        }
+      } else {
+        state[payload.property] = payload.value
+        console.log(`${payload.property} set to: ${payload.value}`)
+      }
     },
     addAction (state, payload) {
       state.availableActions = [...new Set([...state.availableActions, ...payload])]
@@ -100,12 +114,6 @@ export const store = new Vuex.Store({
   getters: {
     getLog: state => {
       return state.log
-    },
-    getRegionName: state => {
-      return state.regionName
-    },
-    getNamingInspiration: state => {
-      return state.namingInspiration
     }
   },
   plugins: [createPersistedState({key: 'ophion'})]

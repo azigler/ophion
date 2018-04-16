@@ -14,7 +14,7 @@
     "desc": "a lightweight roll of flexible solar silicon. deployed efficiently via a pneumatic cannon. the first few turfs are close and easy to dispatch, but later ones require a great dedication of energy.",
     "cost": {  
       "minerals": 1.08,
-      "energy": 1.3
+      "energy": 1.25
     }
   }
 }
