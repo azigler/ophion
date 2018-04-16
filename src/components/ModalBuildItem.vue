@@ -110,6 +110,7 @@ export default {
           this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
           break
         }
+        // TODO: add maxResource structures cases
       }
     }
   }

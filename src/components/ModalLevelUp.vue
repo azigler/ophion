@@ -12,11 +12,15 @@
 <script>
 export default {
   name: 'ModalLevelUp',
-  data () {
-    const topContent = 'top content'
-    const botContent = 'bottom content'
-
-    return { topContent, botContent }
+  props: {
+    topContent: {
+      type: String,
+      default: 'top content'
+    },
+    botContent: {
+      type: String,
+      default: 'bot content'
+    }
   }
 }
 </script>

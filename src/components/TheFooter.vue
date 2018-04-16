@@ -42,14 +42,18 @@ export default {
         // TODO: calculate level up rewards
 
         // TODO: write level up modal content
+        const props = {
+          topContent: 'top content test',
+          botContent: 'bottom content my new test'
+        }
 
         // announce level up and launch modal
         console.log('level up!')
         // TODO: save level up modal content to log
-        this.$store.commit('addLog', { text: `You reached level ${this.level}!`, modal: 'levelUp' })
+        this.$store.commit('addLog', { text: `You reached level ${this.level}!`, modal: 'levelUp', props })
         this.$modal.open({
-          component: ModalLevelUp
-          // TODO: add props object
+          component: ModalLevelUp,
+          props
         })
       }
     }
