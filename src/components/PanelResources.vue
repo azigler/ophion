@@ -30,10 +30,10 @@
             </transition>
             <span class="has-text-weight-bold">/</span>
             <td
-              class="max-resource"
-              :key="$store.state.maxResources[key]"
+              class="storage"
+              :key="$store.state.storage[key]"
             >
-              {{ $store.state.maxResources[key] }}
+              {{ $store.state.storage[key] }}
             </td>
           </tr>
         </table>
@@ -57,7 +57,7 @@ export default {
       }
     },
     valueClass (key, value) {
-      if (value === this.$store.state.maxResources[key]) {
+      if (value === this.$store.state.storage[key]) {
         return 'has-text-weight-bold'
       }
     }
@@ -89,7 +89,7 @@ export default {
         min-width: 4rem;
         text-align: right;
       }
-      &.max-resource {
+      &.storage {
         font-size: 11px;
         vertical-align: baseline;
       }

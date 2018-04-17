@@ -126,11 +126,11 @@ export default {
           break
         }
         case 'mineralSilo': {
-          this.$store.commit('increment', { property: 'minerals', value: 50 * this.level, stash: 'maxResources' })
+          this.$store.commit('increment', { property: 'minerals', value: 50 * this.level, stash: 'storage' })
           break
         }
         case 'chemBattery': {
-          this.$store.commit('increment', { property: 'energy', value: 50 * this.level, stash: 'maxResources' })
+          this.$store.commit('increment', { property: 'energy', value: 50 * this.level, stash: 'storage' })
           break
         }
       }

@@ -24,7 +24,7 @@ export function initialState () {
       energy: 0,
       minerals: 0
     },
-    maxResources: {
+    storage: {
       energy: 1000,
       minerals: 1000
     },
