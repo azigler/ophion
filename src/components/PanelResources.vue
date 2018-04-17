@@ -28,6 +28,13 @@
                 {{ value }}
               </td>
             </transition>
+            <span class="has-text-weight-bold">/</span>
+            <td
+              class="max-resource"
+              :key="$store.state.maxResources[key]"
+            >
+              {{ $store.state.maxResources[key] }}
+            </td>
           </tr>
         </table>
       </div>
@@ -81,6 +88,10 @@ export default {
         padding-left: 1.5rem;
         min-width: 4rem;
         text-align: right;
+      }
+      &.max-resource {
+        font-size: 11px;
+        vertical-align: baseline;
       }
     }
   }

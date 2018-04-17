@@ -29,7 +29,7 @@ import { mapState } from 'vuex'
 export default {
   name: 'ModalBuildMenuItem',
   data () {
-    let scaledCost = this.returnScaledCost(this.id, this.cost, this.$store.state.level)
+    let scaledCost = this.returnScaledCost(this.id, this.type, this.cost, this.$store.state.level)
     return { scaledCost }
   },
   computed: mapState([
@@ -43,6 +43,10 @@ export default {
     name: {
       type: String,
       default: 'TestBuyItem'
+    },
+    type: {
+      type: String,
+      default: 'collector'
     },
     desc: {
       type: String,
@@ -59,15 +63,26 @@ export default {
   },
   watch: {
     level () {
-      this.scaledCost = this.returnScaledCost(this.id, this.cost, this.$store.state.level)
+      this.scaledCost = this.returnScaledCost(this.id, this.type, this.cost, this.$store.state.level)
     }
   },
   methods: {
-    returnScaledCost (id, cost, level) {
+    returnScaledCost (id, type, cost, level) {
       const scaledCost = {}
       for (let resource in cost) {
-        const structCount = this.$store.state.structures[id]
-        const scaled = Math.ceil(Math.pow(cost[resource], structCount) * Math.pow(level, 1.1))
+        let structCount = this.$store.state.structures[id]
+        let scaled
+        switch (type) {
+          case 'storage': {
+            structCount += 1
+            scaled = Math.ceil(Math.pow(cost[resource], (structCount / 2)) * Math.pow(level, 2.2))
+            break
+          }
+          case 'collector': {
+            scaled = Math.ceil(Math.pow(cost[resource], structCount) * Math.pow(level, 1.1))
+            break
+          }
+        }
         if (scaled > 0) {
           scaledCost[resource] = scaled
         } else {
@@ -79,7 +94,7 @@ export default {
     },
     build (name, cost) {
       // check if can build
-      this.scaledCost = this.returnScaledCost(this.id, this.cost, this.$store.state.level)
+      this.scaledCost = this.returnScaledCost(this.id, this.type, this.cost, this.$store.state.level)
       for (let resource in cost) {
         if (this.resources[resource] >= cost[resource]) {
           console.log(`pass: enough ${resource} for ${name}`)
@@ -98,7 +113,7 @@ export default {
       this.$store.commit('addStructure', {name, value: 1})
 
       // update cost
-      this.scaledCost = this.returnScaledCost(this.id, this.cost, this.$store.state.level)
+      this.scaledCost = this.returnScaledCost(this.id, this.type, this.cost, this.$store.state.level)
 
       // apply build effects
       switch (name) {
@@ -110,7 +125,14 @@ export default {
           this.$store.commit('increment', { property: 'energy', value: 1, stash: 'rates' })
           break
         }
-        // TODO: add maxResource structures cases
+        case 'mineralSilo': {
+          this.$store.commit('increment', { property: 'minerals', value: 50 * this.level, stash: 'maxResources' })
+          break
+        }
+        case 'chemBattery': {
+          this.$store.commit('increment', { property: 'energy', value: 50 * this.level, stash: 'maxResources' })
+          break
+        }
       }
     }
   }

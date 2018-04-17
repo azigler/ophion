@@ -25,8 +25,8 @@ export function initialState () {
       minerals: 0
     },
     maxResources: {
-      energy: 10000,
-      minerals: 10000
+      energy: 1000,
+      minerals: 1000
     },
     rates: {
       energy: 0,
@@ -34,7 +34,9 @@ export function initialState () {
     },
     structures: {
       tentaCLAW: 0,
-      solarTurf: 0
+      solarTurf: 0,
+      mineralSilo: 0,
+      chemBattery: 0
     },
     head: {
       inner: 'Ophion'

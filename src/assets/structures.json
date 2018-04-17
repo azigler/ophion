@@ -2,18 +2,40 @@
   "tentaCLAW": {
     "id": "tentaCLAW",
     "name": "tentaC.L.A.W.",
+    "type": "collector",
     "desc": "a chitinsteel tentacle-claw, extending from your core. roots into the ground and consumes minerals beneath the surface. due to your encryption protocol, each successive tentaclaw's biohash is increasingly expensive to mineralize.",
     "cost": {  
-      "minerals": 1.2,
+      "minerals": 1.25,
       "energy": 1.08
     }
   },
   "solarTurf": {
     "id": "solarTurf",
     "name": "solar turf",
+    "type": "collector",
     "desc": "a lightweight roll of flexible solar silicon. deployed efficiently via a pneumatic cannon. the first few turfs are close and easy to dispatch, but later ones require a great dedication of energy.",
     "cost": {  
       "minerals": 1.08,
+      "energy": 1.25
+    }
+  },
+  "mineralSilo": {
+    "id": "mineralSilo",
+    "name": "mineral silo",
+    "type": "storage",
+    "desc": "a fortified silo that extends your built-in compartments, allowing you to store more minerals.",
+    "cost": {  
+      "minerals": 1.25,
+      "energy": 1.2
+    }
+  },
+  "chemBattery": {
+    "id": "chemBattery",
+    "name": "chem battery",
+    "type": "storage",
+    "desc": "molten salts bathing with antifreeze in a sealed tank, perfectly composed to store more of your energy.",
+    "cost": {  
+      "minerals": 1.2,
       "energy": 1.25
     }
   }
