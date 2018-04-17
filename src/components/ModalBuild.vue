@@ -54,6 +54,8 @@ export default {
 
 .panel-build {
   width: 100%;
-  min-width: 50%
+  min-width: 50%;
+  height: fill-available;
+  overflow: scroll;
 }
 </style>
