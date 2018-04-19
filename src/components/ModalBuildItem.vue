@@ -38,19 +38,19 @@ export default {
   props: {
     id: {
       type: String,
-      default: '<MISSING>'
+      default: 'MISSING ID'
     },
     name: {
       type: String,
-      default: 'TestBuyItem'
+      default: 'MISSING NAME'
     },
     type: {
       type: String,
-      default: 'collector'
+      default: 'MISSING TYPE'
     },
     desc: {
       type: String,
-      default: 'Test Buy Item'
+      default: 'MISSING DESCRIPTION'
     },
     cost: {
       type: Object,
@@ -129,7 +129,7 @@ export default {
           this.$store.commit('increment', { property: 'minerals', value: 50 * this.level, stash: 'storage' })
           break
         }
-        case 'chemBattery': {
+        case 'saltBattery': {
           this.$store.commit('increment', { property: 'energy', value: 50 * this.level, stash: 'storage' })
           break
         }

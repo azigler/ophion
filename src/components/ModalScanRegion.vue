@@ -15,11 +15,11 @@ export default {
   props: {
     topContent: {
       type: String,
-      default: 'top content'
+      default: 'MISSING TOP CONTENT'
     },
     botContent: {
       type: String,
-      default: 'bot content'
+      default: 'MISSING BOTTOM CONTENT'
     }
   }
 }

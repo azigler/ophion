@@ -39,12 +39,21 @@ export default {
         const newMaxExp = Math.floor(100 * Math.pow(this.level, (3 / 2)))
         this.$store.commit('setValue', { property: 'maxExp', value: newMaxExp })
 
-        // TODO: calculate level up rewards
+        // calculate level up rewards
+        if (this.level % 2 === 0) {
+          // TODO: change this to call an action that returns a 'rewards' array
+          this.$store.commit('increment', { property: 'minerals', value: 100 * this.level, stash: 'resources' })
+          this.$store.commit('increment', { property: 'energy', value: 50 * this.level, stash: 'resources' })
+        } else {
+          this.$store.commit('increment', { property: 'minerals', value: 50 * this.level, stash: 'resources' })
+          this.$store.commit('increment', { property: 'energy', value: 100 * this.level, stash: 'resources' })
+        }
 
         // TODO: write level up modal content
         const props = {
           topContent: 'top content test',
           botContent: 'bottom content my new test'
+          // TODO: add rewards object
         }
 
         // announce level up and launch modal

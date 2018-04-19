@@ -29,9 +29,9 @@
       "energy": 1.2
     }
   },
-  "chemBattery": {
-    "id": "chemBattery",
-    "name": "chem battery",
+  "saltBattery": {
+    "id": "saltBattery",
+    "name": "salt battery",
     "type": "storage",
     "desc": "molten salts bathing with antifreeze in a sealed tank, perfectly composed to store more of your energy.",
     "cost": {  

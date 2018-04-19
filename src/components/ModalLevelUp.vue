@@ -6,6 +6,13 @@
     <div class="bottom">
       {{ botContent }}
     </div>
+    <p
+      v-for='(reward, index) in rewards'
+      :key='index'
+      v-bind='reward'
+    >
+      {{ reward.name }}: {{ reward.value }}
+    </p>
   </div>
 </template>
 
@@ -15,11 +22,16 @@ export default {
   props: {
     topContent: {
       type: String,
-      default: 'top content'
+      default: 'MISSING TOP CONTENT'
     },
     botContent: {
       type: String,
-      default: 'bot content'
+      default: 'MISSING BOTTOM CONTENT'
+    }
+  },
+  data () {
+    return {
+      rewards: [ {name: 'minerals', value: 50}, {name: 'energy', value: 100} ]
     }
   }
 }

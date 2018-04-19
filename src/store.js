@@ -36,7 +36,7 @@ export function initialState () {
       tentaCLAW: 0,
       solarTurf: 0,
       mineralSilo: 0,
-      chemBattery: 0
+      saltBattery: 0
     },
     head: {
       inner: 'Ophion'
